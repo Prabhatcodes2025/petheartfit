@@ -1,0 +1,2 @@
+import { PropsWithChildren, useEffect, useRef, useState } from 'react'
+export function Reveal({children,className=''}:PropsWithChildren<{className?:string}>){const r=useRef<HTMLDivElement>(null);const [on,setOn]=useState(false);useEffect(()=>{const o=new IntersectionObserver(([e])=>{if(e.isIntersecting){setOn(true);o.disconnect()}},{threshold:.12});if(r.current)o.observe(r.current);return()=>o.disconnect()},[]);return <div ref={r} className={`reveal ${on?'visible':''} ${className}`}>{children}</div>}
