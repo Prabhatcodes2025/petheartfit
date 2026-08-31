@@ -16,7 +16,8 @@ const enquirySchema=z.object({
  fullName:z.string().trim().min(2).max(100),phone:z.string().trim().min(7).max(25),email:z.string().email().max(160).or(z.literal('')),
  city:z.string().trim().min(2).max(100),petType:z.enum(['Dog','Cat','Other']),petName:z.string().trim().max(80),breed:z.string().trim().max(100),
  petAge:z.string().trim().max(50),service:z.string().trim().min(1).max(100),concern:z.string().trim().min(5).max(2000),
- preferredDate:z.string().max(20),preferredTime:z.string().max(30),message:z.string().trim().max(3000),website:z.string().max(0)
+ preferredDate:z.string().max(20),preferredTime:z.string().max(30),message:z.string().trim().max(3000),website:z.string().max(0),
+ source:z.enum(['website','popup']).optional().default('website'),originatingPage:z.string().trim().max(500).optional().default('')
 })
 
 function adminClient(){const url=process.env.SUPABASE_URL;const key=process.env.SUPABASE_SERVICE_ROLE_KEY;return url&&key?createClient(url,key,{auth:{persistSession:false,autoRefreshToken:false}}):null}
@@ -29,7 +30,7 @@ app.post('/api/enquiries',limiter,async(req,res)=>{
  const client=adminClient()
  if(!client){if(process.env.NODE_ENV==='production')return res.status(503).json({message:'Online enquiry storage is being configured. Please contact us by email.'});console.info('[enquiry:development]',{name:parsed.data.fullName,city:parsed.data.city,service:parsed.data.service});return res.status(201).json({ok:true,mode:'development-fallback'})}
  const d=parsed.data
- const {error}=await client.from('enquiries').insert({full_name:d.fullName,phone:d.phone,email:d.email||null,city:d.city,pet_type:d.petType.toLowerCase(),pet_name:d.petName||null,breed:d.breed||null,pet_age:d.petAge||null,service_slug:d.service,behaviour_concern:d.concern,preferred_date:d.preferredDate||null,preferred_time:d.preferredTime||null,message:d.message||null,status:'new'})
+ const {error}=await client.from('enquiries').insert({full_name:d.fullName,phone:d.phone,email:d.email||null,city:d.city,pet_type:d.petType.toLowerCase(),pet_name:d.petName||null,breed:d.breed||null,pet_age:d.petAge||null,service_slug:d.service,behaviour_concern:d.concern,preferred_date:d.preferredDate||null,preferred_time:d.preferredTime||null,message:d.message||null,source:d.source,originating_page:d.originatingPage||null,status:'new'})
  if(error){console.error('[enquiry:create]',error.code);return res.status(500).json({message:'We could not save your enquiry. Please try again shortly.'})}
  res.status(201).json({ok:true})
 })
