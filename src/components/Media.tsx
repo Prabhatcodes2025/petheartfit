@@ -1,0 +1,7 @@
+import { galleryMedia } from '../lib/public-content'
+import { useState } from 'react'
+import photos from '../media.json'
+import videos from '../videos.json'
+export { photos, videos }
+export function TrainingVideo(){return <section className="section real-video"><div className="container video-feature"><div><p className="eyebrow">Real sessions. Everyday progress.</p><h2>See the work behind the learning.</h2><p>A short glimpse of Pawrexio training, using patient guidance in familiar surroundings.</p></div><video controls playsInline preload="none" poster={videos[0].poster} width="480" height="720"><source src={videos[0].url} type="video/mp4"/></video></div></section>}
+export function MediaGallery(){const [filter,setFilter]=useState('All');return <><div className="filter-bar">{['All',...new Set(galleryMedia.map(v=>v.category)),'Videos'].map(c=><button key={c} className={filter===c?'active':''} onClick={()=>setFilter(c)}>{c}</button>)}</div><div className="real-gallery">{galleryMedia.filter(v=>filter==='All'||filter===v.category||(filter==='Videos'&&v.type==='video')).map(v=><figure key={v.id}>{v.type==='video'?<video controls playsInline preload="none" poster={v.poster} width="480" height="720" onPlay={e=>{document.querySelectorAll('video').forEach(other=>{if(other!==e.currentTarget)other.pause()})}}><source src={v.url} type="video/mp4"/></video>:<a href={v.url} target="_blank" rel="noreferrer"><img src={v.url} width={v.width||600} height={v.height||800} loading="lazy" alt={v.title}/></a>}<figcaption>{v.title}</figcaption></figure>)}</div></>}

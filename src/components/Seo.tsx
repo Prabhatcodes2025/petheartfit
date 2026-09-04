@@ -1,3 +1,4 @@
+import { pageMetadata } from '../lib/public-content'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { faqs, locations, posts, programs, services, siteSettings } from '../data'
@@ -26,7 +27,7 @@ export function Seo(){
   const { pathname }=useLocation()
   useEffect(()=>{
     let meta=pages[pathname]
-    let schema:Record<string,unknown>={'@context':'https://schema.org','@type':'LocalBusiness',name:'Pawrexio',url:base,telephone:siteSettings.phone,email:siteSettings.email,address:siteSettings.address,image:`${base}/assets/hero-companionship.webp`}
+    let schema:Record<string,unknown>={'@context':'https://schema.org','@type':'LocalBusiness',name:'Pawrexio',url:base,telephone:siteSettings.phone,email:siteSettings.email,address:siteSettings.address,image:`${base}/assets/real/companions.webp`}
     const slug=pathname.split('/').pop()
     if(pathname.startsWith('/services/')){const item=services.find(x=>x.slug===slug);if(item){meta=[`${item.title} | Pawrexio`,item.description];schema={'@context':'https://schema.org','@type':'Service',name:item.title,description:item.description,provider:{'@type':'Organization',name:'Pawrexio'}}}}
     else if(pathname.startsWith('/packages/')){const item=programs.find(x=>x.slug===slug);if(item){meta=[`${item.title} Package | Pawrexio`,item.summary];schema={'@context':'https://schema.org','@type':'Service',name:item.title,description:item.summary,provider:{'@type':'Organization',name:'Pawrexio'}}}}
@@ -34,18 +35,19 @@ export function Seo(){
     else if(pathname.startsWith('/blog/')){const item=posts.find(x=>x.slug===slug);if(item){meta=[`${item.title} | Pawrexio`,item.excerpt];schema={'@context':'https://schema.org','@type':'Article',headline:item.title,description:item.excerpt,image:`${base}${item.image}`,author:{'@type':'Organization',name:'Pawrexio'}}}}
     else if(pathname==='/faq')schema={'@context':'https://schema.org','@type':'FAQPage',mainEntity:faqs.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}}))}
     if(!meta)meta=['Pawrexio | Love, Care, Companionship','Professional pet training and care from Pawrexio.']
+    const custom=pageMetadata[pathname];if(custom)meta=[custom.meta_title||meta[0],custom.meta_description||meta[1]]
     document.title=meta[0]
     upsertMeta('meta[name="description"]','name','description',meta[1])
     upsertMeta('meta[property="og:title"]','property','og:title',meta[0])
     upsertMeta('meta[property="og:description"]','property','og:description',meta[1])
-    upsertMeta('meta[property="og:image"]','property','og:image',`${base}/assets/hero-companionship.webp`)
-    upsertMeta('meta[name="robots"]','name','robots',pathname.startsWith('/admin')?'noindex,nofollow':'index,follow')
+    upsertMeta('meta[property="og:image"]','property','og:image',custom?.og_image_url||`${base}/assets/real/companions.webp`)
+    upsertMeta('meta[name="robots"]','name','robots',pathname.startsWith('/admin')||custom?.robots_index===false?'noindex,nofollow':'index,follow')
     let canonical=document.head.querySelector('link[rel="canonical"]') as HTMLLinkElement|null
     if(!canonical){canonical=document.createElement('link');canonical.rel='canonical';document.head.appendChild(canonical)}
-    canonical.href=`${base}${pathname}`
+    canonical.href=custom?.canonical_url||`${base}${pathname}`
     let script=document.querySelector('#pawrexio-schema') as HTMLScriptElement|null
     if(!script){script=document.createElement('script');script.id='pawrexio-schema';script.type='application/ld+json';document.head.appendChild(script)}
-    script.text=JSON.stringify(schema)
+    script.text=JSON.stringify([schema,...(pathname==='/'?[]:[{'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:base},{'@type':'ListItem',position:2,name:meta[0].split('|')[0].trim(),item:canonical.href}]}])])
   },[pathname])
   return null
 }

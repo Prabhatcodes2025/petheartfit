@@ -1,0 +1,38 @@
+[
+  {
+    "id": "training-session",
+    "title": "Training Session",
+    "url": "/assets/real/training-session.mp4",
+    "poster": "/assets/real/training-session.webp",
+    "category": "Training",
+    "type": "video",
+    "bytes": 2219270
+  },
+  {
+    "id": "walking-session",
+    "title": "Walking Session",
+    "url": "/assets/real/walking-session.mp4",
+    "poster": "/assets/real/walking-session.webp",
+    "category": "Training",
+    "type": "video",
+    "bytes": 2412018
+  },
+  {
+    "id": "home-skills",
+    "title": "Home Skills",
+    "url": "/assets/real/home-skills.mp4",
+    "poster": "/assets/real/home-skills.webp",
+    "category": "Training",
+    "type": "video",
+    "bytes": 1547240
+  },
+  {
+    "id": "cat-session",
+    "title": "Cat Session",
+    "url": "/assets/real/cat-session.mp4",
+    "poster": "/assets/real/cat-session.webp",
+    "category": "Cats",
+    "type": "video",
+    "bytes": 1659931
+  }
+]

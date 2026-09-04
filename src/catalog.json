@@ -1,0 +1,1283 @@
+[
+  {
+    "id": "pkg-basic-training-for-dog",
+    "slug": "basic-training-for-dog",
+    "title": "Basic Training For Dog",
+    "category": "Dog Training",
+    "level": "Dog Training",
+    "duration": "(24 Sessions), 2 Months",
+    "sessions": "(24 Sessions), 2 Months",
+    "price": "Rs 16,999",
+    "regularPrice": "Rs 18,999",
+    "summary": "Personalised basic training for dog with structured sessions and practical pet-parent guidance.",
+    "includes": [
+      "7 Basic Commands - Sit, Down, Stay, Hi5, Handshake, Come, Go",
+      "5 No Commands - No, Don't Jump, Don't bark, Don't Pull, Don't Eat",
+      "Advanced Potty / Pee Training",
+      "Biting/Mouthing Correction"
+    ],
+    "content": [],
+    "blocks": [
+      {
+        "kind": "list",
+        "text": "7 Basic Commands - Sit, Down, Stay, Hi5, Handshake, Come, Go"
+      },
+      {
+        "kind": "list",
+        "text": "5 No Commands - No, Don't Jump, Don't bark, Don't Pull, Don't Eat"
+      },
+      {
+        "kind": "list",
+        "text": "Advanced Potty / Pee Training"
+      },
+      {
+        "kind": "list",
+        "text": "Biting/Mouthing Correction"
+      }
+    ],
+    "image": "/assets/real/obedience.webp",
+    "reference": "https://petheartfit.in/services/basic-training-for-dog"
+  },
+  {
+    "id": "pkg-smart-training-for-dog",
+    "slug": "smart-training-for-dog",
+    "title": "Smart Training For Dog",
+    "category": "Dog Training",
+    "level": "Dog Training",
+    "duration": "(48 Sessions), 4 Months",
+    "sessions": "(48 Sessions), 4 Months",
+    "price": "Rs 33,500",
+    "regularPrice": "Rs 37,500",
+    "summary": "Personalised smart training for dog with structured sessions and practical pet-parent guidance.",
+    "includes": [
+      "Smart Commands -Go To Bed, Fetch Newspaper",
+      "Counting 1 to 5",
+      "Advanced Play -Hula-Hoop Jumps, Fetch & drop, Spin",
+      "Advanced Greetings -Namaste. Shake Hand, High-five.",
+      "Lower Acrobat Module - Crawl, Rollover, Lie Down. Sleep (play dead)",
+      "Advanced Potty / Pee Training",
+      "Basic Social Etiquettes -Don't Jump, Don't Pull, Boundaries in House",
+      "Biting/Mouthing Correction",
+      "7 Basic Commands -Sit. Down, Stay, Hi5. Handshake. Come. Go",
+      "5 No Commands -No, Don't Jump, Don't bark, Don't Pull, Don't Eat",
+      "Leash Walking -Heel Walk, Turn, Slow Walk. Fast Walk.",
+      "Instruction-Sit , Advanced Stay, Down, Get Up (Commands follow in distractions as well)",
+      "Crate Training"
+    ],
+    "content": [],
+    "blocks": [
+      {
+        "kind": "list",
+        "text": "Smart Commands -Go To Bed, Fetch Newspaper"
+      },
+      {
+        "kind": "list",
+        "text": "Counting 1 to 5"
+      },
+      {
+        "kind": "list",
+        "text": "Advanced Play -Hula-Hoop Jumps, Fetch & drop, Spin"
+      },
+      {
+        "kind": "list",
+        "text": "Advanced Greetings -Namaste. Shake Hand, High-five."
+      },
+      {
+        "kind": "list",
+        "text": "Lower Acrobat Module - Crawl, Rollover, Lie Down. Sleep (play dead)"
+      },
+      {
+        "kind": "list",
+        "text": "Advanced Potty / Pee Training"
+      },
+      {
+        "kind": "list",
+        "text": "Basic Social Etiquettes -Don't Jump, Don't Pull, Boundaries in House"
+      },
+      {
+        "kind": "list",
+        "text": "Biting/Mouthing Correction"
+      },
+      {
+        "kind": "list",
+        "text": "7 Basic Commands -Sit. Down, Stay, Hi5. Handshake. Come. Go"
+      },
+      {
+        "kind": "list",
+        "text": "5 No Commands -No, Don't Jump, Don't bark, Don't Pull, Don't Eat"
+      },
+      {
+        "kind": "list",
+        "text": "Leash Walking -Heel Walk, Turn, Slow Walk. Fast Walk."
+      },
+      {
+        "kind": "list",
+        "text": "Instruction-Sit , Advanced Stay, Down, Get Up (Commands follow in distractions as well)"
+      },
+      {
+        "kind": "list",
+        "text": "Crate Training"
+      }
+    ],
+    "image": "/assets/real/advanced-skills.webp",
+    "reference": "https://petheartfit.in/services/smart-training-for-dog"
+  },
+  {
+    "id": "pkg-advanced-training-for-dog",
+    "slug": "advanced-training-for-dog",
+    "title": "Advanced Training For Dog",
+    "category": "Dog Training",
+    "level": "Dog Training",
+    "duration": "(72 Sessions), 6 Months",
+    "sessions": "(72 Sessions), 6 Months",
+    "price": "Rs 47,499",
+    "regularPrice": "Rs 51,499",
+    "summary": "Personalised advanced training for dog with structured sessions and practical pet-parent guidance.",
+    "includes": [
+      "Advanced Off Leash walking -Without leash walking",
+      "Advanced Obedience Training",
+      "Smart Commands -Go To Bed, Fetch Newspaper",
+      "Advanced Play - Hula-Hoop Jumps, Fetch & drop, Spin",
+      "Advanced Greetings - Namaste, Shake Hand, High-five.",
+      "Counting 1 to 5",
+      "Advanced Off Leash walking - Without leash walking.",
+      "Lower Acrobat Module - Crawl, Rollover, Lie Down, Sleep (play dead)",
+      "Advanced Potty / Pee Training",
+      "Basic Social Etiquettes - Don't Jump, Don't Pull, Boundaries in House",
+      "Biting/Mouthing Correction",
+      "7 Basic Commands - Sit, Down, Stay, Hi5, Handshake, Come, Go",
+      "5 No Commands - No, Don't Jump, Don't bark, Don't Pull, Don't Eat",
+      "Leash Walking -Heel Walk, Turn, Slow Walk, Fast Walk."
+    ],
+    "content": [],
+    "blocks": [
+      {
+        "kind": "list",
+        "text": "Advanced Off Leash walking -Without leash walking"
+      },
+      {
+        "kind": "list",
+        "text": "Advanced Obedience Training"
+      },
+      {
+        "kind": "list",
+        "text": "Smart Commands -Go To Bed, Fetch Newspaper"
+      },
+      {
+        "kind": "list",
+        "text": "Advanced Play - Hula-Hoop Jumps, Fetch & drop, Spin"
+      },
+      {
+        "kind": "list",
+        "text": "Advanced Greetings - Namaste, Shake Hand, High-five."
+      },
+      {
+        "kind": "list",
+        "text": "Counting 1 to 5"
+      },
+      {
+        "kind": "list",
+        "text": "Advanced Off Leash walking - Without leash walking."
+      },
+      {
+        "kind": "list",
+        "text": "Lower Acrobat Module - Crawl, Rollover, Lie Down, Sleep (play dead)"
+      },
+      {
+        "kind": "list",
+        "text": "Advanced Potty / Pee Training"
+      },
+      {
+        "kind": "list",
+        "text": "Basic Social Etiquettes - Don't Jump, Don't Pull, Boundaries in House"
+      },
+      {
+        "kind": "list",
+        "text": "Biting/Mouthing Correction"
+      },
+      {
+        "kind": "list",
+        "text": "7 Basic Commands - Sit, Down, Stay, Hi5, Handshake, Come, Go"
+      },
+      {
+        "kind": "list",
+        "text": "5 No Commands - No, Don't Jump, Don't bark, Don't Pull, Don't Eat"
+      },
+      {
+        "kind": "list",
+        "text": "Leash Walking -Heel Walk, Turn, Slow Walk, Fast Walk."
+      }
+    ],
+    "image": "/assets/real/agility.webp",
+    "reference": "https://petheartfit.in/services/advanced-training-for-dog"
+  },
+  {
+    "id": "pkg-master-training-for-dog",
+    "slug": "master-training-for-dog",
+    "title": "Master Training For Dog",
+    "category": "Dog Training",
+    "level": "Dog Training",
+    "duration": "(120 Sessions), 10 Months",
+    "sessions": "(120 Sessions), 10 Months",
+    "price": "Rs 85,999",
+    "regularPrice": "Rs 89,500",
+    "summary": "Personalised master training for dog with structured sessions and practical pet-parent guidance.",
+    "includes": [
+      "Advanced Agility Training - Hurdle Jump. Cone Cross Walk, Between the Legs Walk (weave)",
+      "Theatrics -Play dead act, statue/freeze",
+      "Sniff & Search",
+      "Advanced Obedience Training",
+      "Advanced Behavior Training",
+      "Protection & Guard Module - Guarding Position, Hold & Bark in Guarding Position",
+      "Protection & Guard Module - Alert Bark on doorbell, Alert Bark on Strangers",
+      "Protection & Guard Module - Attack, Stop",
+      "Smart Commands - Go To Bed, Fetch Newspaper",
+      "Advanced Play -Hula-Hoop Jumps, Fetch & drop. Spin",
+      "Advanced Greetings - Namaste. Shake Hand, High-five.",
+      "Counting 1 to 5",
+      "Advanced Off Leash walking -Without leash walking",
+      "Lower Acrobat Module - Crawl, Rollover, Lie Down, Sleep (play dead)",
+      "Advanced Potty/Pee Training",
+      "Basic Social Etiquettes - Don't Jump, Don't Pull. Boundaries in House",
+      "Biting/Mouthing Correction",
+      "7 Basic Commands - Sit, Down, Stay, Hi5, Handshake, Come, Go",
+      "5 No Commands -No, Don't Jump, Don't bark, Don't Pull, Don't Eat",
+      "Leash Walking -Heel Walk, Turn, Slow Walk, Fast Walk",
+      "Instruction -Sit, Advanced Stay. Down. Get Up (Commands follow in distractions as well)",
+      "Combo Command- Ring Jump, Back & Zigzag"
+    ],
+    "content": [],
+    "blocks": [
+      {
+        "kind": "list",
+        "text": "Advanced Agility Training - Hurdle Jump. Cone Cross Walk, Between the Legs Walk (weave)"
+      },
+      {
+        "kind": "list",
+        "text": "Theatrics -Play dead act, statue/freeze"
+      },
+      {
+        "kind": "list",
+        "text": "Sniff & Search"
+      },
+      {
+        "kind": "list",
+        "text": "Advanced Obedience Training"
+      },
+      {
+        "kind": "list",
+        "text": "Advanced Behavior Training"
+      },
+      {
+        "kind": "list",
+        "text": "Protection & Guard Module - Guarding Position, Hold & Bark in Guarding Position"
+      },
+      {
+        "kind": "list",
+        "text": "Protection & Guard Module - Alert Bark on doorbell, Alert Bark on Strangers"
+      },
+      {
+        "kind": "list",
+        "text": "Protection & Guard Module - Attack, Stop"
+      },
+      {
+        "kind": "list",
+        "text": "Smart Commands - Go To Bed, Fetch Newspaper"
+      },
+      {
+        "kind": "list",
+        "text": "Advanced Play -Hula-Hoop Jumps, Fetch & drop. Spin"
+      },
+      {
+        "kind": "list",
+        "text": "Advanced Greetings - Namaste. Shake Hand, High-five."
+      },
+      {
+        "kind": "list",
+        "text": "Counting 1 to 5"
+      },
+      {
+        "kind": "list",
+        "text": "Advanced Off Leash walking -Without leash walking"
+      },
+      {
+        "kind": "list",
+        "text": "Lower Acrobat Module - Crawl, Rollover, Lie Down, Sleep (play dead)"
+      },
+      {
+        "kind": "list",
+        "text": "Advanced Potty/Pee Training"
+      },
+      {
+        "kind": "list",
+        "text": "Basic Social Etiquettes - Don't Jump, Don't Pull. Boundaries in House"
+      },
+      {
+        "kind": "list",
+        "text": "Biting/Mouthing Correction"
+      },
+      {
+        "kind": "list",
+        "text": "7 Basic Commands - Sit, Down, Stay, Hi5, Handshake, Come, Go"
+      },
+      {
+        "kind": "list",
+        "text": "5 No Commands -No, Don't Jump, Don't bark, Don't Pull, Don't Eat"
+      },
+      {
+        "kind": "list",
+        "text": "Leash Walking -Heel Walk, Turn, Slow Walk, Fast Walk"
+      },
+      {
+        "kind": "list",
+        "text": "Instruction -Sit, Advanced Stay. Down. Get Up (Commands follow in distractions as well)"
+      },
+      {
+        "kind": "list",
+        "text": "Combo Command- Ring Jump, Back & Zigzag"
+      }
+    ],
+    "image": "/assets/real/hand-signals.webp",
+    "reference": "https://petheartfit.in/services/master-training-for-dog"
+  },
+  {
+    "id": "pkg-canine-behaviour-training",
+    "slug": "canine-behaviour-training",
+    "title": "Canine Behaviour training",
+    "category": "Dog Training",
+    "level": "Dog Training",
+    "duration": "(48 Sessions), 4 Months",
+    "sessions": "(48 Sessions), 4 Months",
+    "price": "31,599",
+    "regularPrice": "38,499",
+    "summary": "• Excessive Barking",
+    "includes": [],
+    "content": [
+      "• Excessive Barking",
+      "• Biting",
+      "• Growling",
+      "• Lunging on other people",
+      "• Fear Anxiety",
+      "• Hyperactivity",
+      "• Separation Anxiety",
+      "• Aggressive behavior",
+      "• Excessive leash pulling",
+      "• Excessive chewing of household items"
+    ],
+    "blocks": [
+      {
+        "kind": "paragraph",
+        "text": "• Excessive Barking"
+      },
+      {
+        "kind": "paragraph",
+        "text": "• Biting"
+      },
+      {
+        "kind": "paragraph",
+        "text": "• Growling"
+      },
+      {
+        "kind": "paragraph",
+        "text": "• Lunging on other people"
+      },
+      {
+        "kind": "paragraph",
+        "text": "• Fear Anxiety"
+      },
+      {
+        "kind": "paragraph",
+        "text": "• Hyperactivity"
+      },
+      {
+        "kind": "paragraph",
+        "text": "• Separation Anxiety"
+      },
+      {
+        "kind": "paragraph",
+        "text": "• Aggressive behavior"
+      },
+      {
+        "kind": "paragraph",
+        "text": "• Excessive leash pulling"
+      },
+      {
+        "kind": "paragraph",
+        "text": "• Excessive chewing of household items"
+      }
+    ],
+    "image": "/assets/real/reward-training.webp",
+    "reference": "https://petheartfit.in/services/canine-behaviour-training"
+  },
+  {
+    "id": "pkg-canine-behavior-therapy-cbt",
+    "slug": "canine-behavior-therapy-cbt",
+    "title": "Canine Behavior Therapy (CBT)",
+    "category": "Dog Training",
+    "level": "Dog Training",
+    "duration": "(48 Sessions), 4 Months",
+    "sessions": "(48 Sessions), 4 Months",
+    "price": "46,000",
+    "regularPrice": "50,000",
+    "summary": "Personalised canine behavior therapy (cbt) with structured sessions and practical pet-parent guidance.",
+    "includes": [
+      "Excessive Barking",
+      "Biting",
+      "Growling",
+      "lunging on other people",
+      "Fear Anxiety",
+      "Hyperactivity",
+      "Separation Anxiety",
+      "Aggressive behavior",
+      "Excessive leash pulling",
+      "Excessive chewing of households"
+    ],
+    "content": [],
+    "blocks": [
+      {
+        "kind": "list",
+        "text": "Excessive Barking"
+      },
+      {
+        "kind": "list",
+        "text": "Biting"
+      },
+      {
+        "kind": "list",
+        "text": "Growling"
+      },
+      {
+        "kind": "list",
+        "text": "lunging on other people"
+      },
+      {
+        "kind": "list",
+        "text": "Fear Anxiety"
+      },
+      {
+        "kind": "list",
+        "text": "Hyperactivity"
+      },
+      {
+        "kind": "list",
+        "text": "Separation Anxiety"
+      },
+      {
+        "kind": "list",
+        "text": "Aggressive behavior"
+      },
+      {
+        "kind": "list",
+        "text": "Excessive leash pulling"
+      },
+      {
+        "kind": "list",
+        "text": "Excessive chewing of households"
+      }
+    ],
+    "image": "/assets/real/handling.webp",
+    "reference": "https://petheartfit.in/services/canine-behavior-therapy-cbt"
+  },
+  {
+    "id": "pkg-puppy-training",
+    "slug": "puppy-training",
+    "title": "Puppy Training",
+    "category": "Dog Training",
+    "level": "Dog Training",
+    "duration": "(12 Sessions), 1 Month - (Food & Stay Included)",
+    "sessions": "(12 Sessions), 1 Month - (Food & Stay Included)",
+    "price": "17,500",
+    "regularPrice": "20,500",
+    "summary": "Give your puppy the perfect start with Puppy Training at Farmhouse by Pawrexio. Our farmhouse training program offers a peaceful, open, and safe environment where puppies can learn essential skills, build confidence, and develop p",
+    "includes": [],
+    "content": [
+      "Give your puppy the perfect start with Puppy Training at Farmhouse by Pawrexio. Our farmhouse training program offers a peaceful, open, and safe environment where puppies can learn essential skills, build confidence, and develop positive behavior through fun and structured training sessions.",
+      "This program is specially designed for young puppies to improve obedience, socialization, discipline, and overall behavior while enjoying outdoor activities and supervised interaction in a stress-free setting.",
+      "Potty / Pee Training",
+      "Basic Social Etiquettes",
+      "Puppy Biting Correction",
+      "Instruction - Sit, Stay, Shake Hand Walking - Come, Go"
+    ],
+    "blocks": [
+      {
+        "kind": "paragraph",
+        "text": "Give your puppy the perfect start with Puppy Training at Farmhouse by Pawrexio. Our farmhouse training program offers a peaceful, open, and safe environment where puppies can learn essential skills, build confidence, and develop positive behavior through fun and structured training sessions."
+      },
+      {
+        "kind": "paragraph",
+        "text": "This program is specially designed for young puppies to improve obedience, socialization, discipline, and overall behavior while enjoying outdoor activities and supervised interaction in a stress-free setting."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Potty / Pee Training"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Basic Social Etiquettes"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Puppy Biting Correction"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Instruction - Sit, Stay, Shake Hand Walking - Come, Go"
+      }
+    ],
+    "image": "/assets/real/puppy-focus.webp",
+    "reference": "https://petheartfit.in/services/puppy-training"
+  },
+  {
+    "id": "pkg-intermediate-dog-training",
+    "slug": "intermediate-dog-training",
+    "title": "Intermediate Dog Training",
+    "category": "Dog Training",
+    "level": "Dog Training",
+    "duration": "(36 Sessions), 3 Months",
+    "sessions": "(36 Sessions), 3 Months",
+    "price": "37,500",
+    "regularPrice": "43,500",
+    "summary": "Take your dog’s obedience and behavior skills to the next level with the Intermediate Training at Farmhouse Program by Pawrexio. Conducted in a peaceful and spacious farmhouse environment, this advanced training program is designe",
+    "includes": [
+      "Leash Walking - Heel Walk, Turn, Slow Walk, Fast Walk",
+      "Lower Acrobat Module - Crawl, Rollover, Lie Down, Sleep (Play dead)",
+      "Advanced Potty / Pee Training",
+      "Basic Social Etiquettes - Don't Jump, Don't Pull, Boundaries in House",
+      "Biting/Mouthing Correction",
+      "7 Basic Commands - Sit, Down, Stay, Hi5, Handshake, Come, Go",
+      "5 No Commands - No, Don't Jump, Don't bark, don’t Pull, Don't Eat"
+    ],
+    "content": [
+      "Take your dog’s obedience and behavior skills to the next level with the Intermediate Training at Farmhouse Program by Pawrexio. Conducted in a peaceful and spacious farmhouse environment, this advanced training program is designed to improve discipline, social behavior, leash control, and fun acrobatic skills through structured professional sessions.",
+      "Our experienced trainers use positive reinforcement techniques to help dogs become confident, obedient, and well-mannered companions while enjoying outdoor learning and activity-based training"
+    ],
+    "blocks": [
+      {
+        "kind": "paragraph",
+        "text": "Take your dog’s obedience and behavior skills to the next level with the Intermediate Training at Farmhouse Program by Pawrexio. Conducted in a peaceful and spacious farmhouse environment, this advanced training program is designed to improve discipline, social behavior, leash control, and fun acrobatic skills through structured professional sessions."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Our experienced trainers use positive reinforcement techniques to help dogs become confident, obedient, and well-mannered companions while enjoying outdoor learning and activity-based training"
+      },
+      {
+        "kind": "list",
+        "text": "Leash Walking - Heel Walk, Turn, Slow Walk, Fast Walk"
+      },
+      {
+        "kind": "list",
+        "text": "Lower Acrobat Module - Crawl, Rollover, Lie Down, Sleep (Play dead)"
+      },
+      {
+        "kind": "list",
+        "text": "Advanced Potty / Pee Training"
+      },
+      {
+        "kind": "list",
+        "text": "Basic Social Etiquettes - Don't Jump, Don't Pull, Boundaries in House"
+      },
+      {
+        "kind": "list",
+        "text": "Biting/Mouthing Correction"
+      },
+      {
+        "kind": "list",
+        "text": "7 Basic Commands - Sit, Down, Stay, Hi5, Handshake, Come, Go"
+      },
+      {
+        "kind": "list",
+        "text": "5 No Commands - No, Don't Jump, Don't bark, don’t Pull, Don't Eat"
+      }
+    ],
+    "image": "/assets/real/heelwork.webp",
+    "reference": "https://petheartfit.in/services/intermediate-dog-training"
+  },
+  {
+    "id": "pkg-leash-training-for-dogs",
+    "slug": "leash-training-for-dogs",
+    "title": "Leash Training For Dogs",
+    "category": "Dog Training",
+    "level": "Dog Training",
+    "duration": "Making Daily Walks Safer",
+    "sessions": "Making Daily Walks Safer",
+    "price": "",
+    "regularPrice": "",
+    "summary": "At Pawrexio , our Leash Training for Dogs program helps your pet learn to walk calmly and confidently by your side without pulling, lunging, or getting distracted. Whether you have a playful puppy or an adult dog that struggles du",
+    "includes": [],
+    "content": [
+      "At Pawrexio , our Leash Training for Dogs program helps your pet learn to walk calmly and confidently by your side without pulling, lunging, or getting distracted. Whether you have a playful puppy or an adult dog that struggles during walks, our experienced trainers use positive reinforcement techniques to teach proper leash manners in a safe and stress-free environment.",
+      "Our training focuses on improving your dog's walking behaviour, responsiveness to commands, and confidence in different surroundings. We gradually introduce real-life situations such as busy streets, parks, and residential areas so your dog learns to stay calm and obedient during daily walks. With regular practice and personalised guidance, leash training strengthens the bond between you and your pet while making every walk more enjoyable.",
+      "Pawrexio provides personalised home-visit leash training sessions designed around your dog's age, breed, temperament, and learning pace. Our goal is to help pet parents enjoy safe, comfortable, and hassle-free walks while building lifelong good habits for their furry companions."
+    ],
+    "blocks": [
+      {
+        "kind": "paragraph",
+        "text": "At Pawrexio , our Leash Training for Dogs program helps your pet learn to walk calmly and confidently by your side without pulling, lunging, or getting distracted. Whether you have a playful puppy or an adult dog that struggles during walks, our experienced trainers use positive reinforcement techniques to teach proper leash manners in a safe and stress-free environment."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Our training focuses on improving your dog's walking behaviour, responsiveness to commands, and confidence in different surroundings. We gradually introduce real-life situations such as busy streets, parks, and residential areas so your dog learns to stay calm and obedient during daily walks. With regular practice and personalised guidance, leash training strengthens the bond between you and your pet while making every walk more enjoyable."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Pawrexio provides personalised home-visit leash training sessions designed around your dog's age, breed, temperament, and learning pace. Our goal is to help pet parents enjoy safe, comfortable, and hassle-free walks while building lifelong good habits for their furry companions."
+      }
+    ],
+    "image": "/assets/real/walking.webp",
+    "reference": "https://petheartfit.in/services/leash-training-for-dogs"
+  },
+  {
+    "id": "pkg-kitten-training",
+    "slug": "kitten-training",
+    "title": "Kitten Training",
+    "category": "Cat Training",
+    "level": "Cat Training",
+    "duration": "12 sessions 30 mins each",
+    "sessions": "12 sessions 30 mins each",
+    "price": "Rs 7,999",
+    "regularPrice": "Rs 9,999",
+    "summary": "Personalised kitten training with structured sessions and practical pet-parent guidance.",
+    "includes": [
+      "Toilet Training (in Litter Box)",
+      "Biting Issue",
+      "Social Etiquettes",
+      "2 commands - sit stay",
+      "Strengthens your bond with your Cat through rewarding experiences and shared activities",
+      "Teach your Cat to better understand and respond to your cues",
+      "Helps your Cat become disciplined with more reliable everyday habits"
+    ],
+    "content": [],
+    "blocks": [
+      {
+        "kind": "list",
+        "text": "Toilet Training (in Litter Box)"
+      },
+      {
+        "kind": "list",
+        "text": "Biting Issue"
+      },
+      {
+        "kind": "list",
+        "text": "Social Etiquettes"
+      },
+      {
+        "kind": "list",
+        "text": "2 commands - sit stay"
+      },
+      {
+        "kind": "heading",
+        "text": "Cat Training Benefits"
+      },
+      {
+        "kind": "list",
+        "text": "Strengthens your bond with your Cat through rewarding experiences and shared activities"
+      },
+      {
+        "kind": "list",
+        "text": "Teach your Cat to better understand and respond to your cues"
+      },
+      {
+        "kind": "list",
+        "text": "Helps your Cat become disciplined with more reliable everyday habits"
+      }
+    ],
+    "image": "/assets/real/cat-session.webp",
+    "reference": "https://petheartfit.in/services/kitten-training"
+  },
+  {
+    "id": "pkg-basic-cat-training",
+    "slug": "basic-cat-training",
+    "title": "Basic Cat Training",
+    "category": "Cat Training",
+    "level": "Cat Training",
+    "duration": "24 sessions | 30 mins each",
+    "sessions": "24 sessions | 30 mins each",
+    "price": "Rs 14,999",
+    "regularPrice": "Rs 18,999",
+    "summary": "Personalised basic cat training with structured sessions and practical pet-parent guidance.",
+    "includes": [
+      "Toilet Training (in Litter Box)",
+      "Biting Issue",
+      "Social Etiquettes",
+      "5 Commands - Sit, Stay, Lay down, Come, Go",
+      "Strengthens your bond with your Cat through rewarding experiences and shared activities",
+      "Teach your Cat to better understand and respond to your cues",
+      "Helps your Cat become disciplined with more reliable everyday habits"
+    ],
+    "content": [],
+    "blocks": [
+      {
+        "kind": "list",
+        "text": "Toilet Training (in Litter Box)"
+      },
+      {
+        "kind": "list",
+        "text": "Biting Issue"
+      },
+      {
+        "kind": "list",
+        "text": "Social Etiquettes"
+      },
+      {
+        "kind": "list",
+        "text": "5 Commands - Sit, Stay, Lay down, Come, Go"
+      },
+      {
+        "kind": "heading",
+        "text": "Cat Training Benefits"
+      },
+      {
+        "kind": "list",
+        "text": "Strengthens your bond with your Cat through rewarding experiences and shared activities"
+      },
+      {
+        "kind": "list",
+        "text": "Teach your Cat to better understand and respond to your cues"
+      },
+      {
+        "kind": "list",
+        "text": "Helps your Cat become disciplined with more reliable everyday habits"
+      }
+    ],
+    "image": "/assets/real/cat-session.webp",
+    "reference": "https://petheartfit.in/services/basic-cat-training"
+  },
+  {
+    "id": "pkg-smart-cat-training",
+    "slug": "smart-cat-training",
+    "title": "Smart Cat Training",
+    "category": "Cat Training",
+    "level": "Cat Training",
+    "duration": "36 sessions | 30 mins each",
+    "sessions": "36 sessions | 30 mins each",
+    "price": "Rs 28340",
+    "regularPrice": "Rs 21800",
+    "summary": "Personalised smart cat training with structured sessions and practical pet-parent guidance.",
+    "includes": [
+      "Toilet Training (in Litter Box)",
+      "Biting Issue",
+      "Social Etiquettes",
+      "Touch Acceptance (to be friendly)",
+      "Basic House Rules",
+      "7 Commands - Sit, Stay, Lay down, Come, Go, Hi-Five, Handshake",
+      "3 No commands - No, Don't Jump, Don't eat.t (provided on app)",
+      "Strengthens your bond with your Cat through rewarding experiences and shared activities",
+      "Teach your Cat to better understand and respond to your cues",
+      "Helps your Cat become disciplined with more reliable everyday habits"
+    ],
+    "content": [],
+    "blocks": [
+      {
+        "kind": "list",
+        "text": "Toilet Training (in Litter Box)"
+      },
+      {
+        "kind": "list",
+        "text": "Biting Issue"
+      },
+      {
+        "kind": "list",
+        "text": "Social Etiquettes"
+      },
+      {
+        "kind": "list",
+        "text": "Touch Acceptance (to be friendly)"
+      },
+      {
+        "kind": "list",
+        "text": "Basic House Rules"
+      },
+      {
+        "kind": "list",
+        "text": "7 Commands - Sit, Stay, Lay down, Come, Go, Hi-Five, Handshake"
+      },
+      {
+        "kind": "list",
+        "text": "3 No commands - No, Don't Jump, Don't eat.t (provided on app)"
+      },
+      {
+        "kind": "heading",
+        "text": "Cat Training Benefits"
+      },
+      {
+        "kind": "list",
+        "text": "Strengthens your bond with your Cat through rewarding experiences and shared activities"
+      },
+      {
+        "kind": "list",
+        "text": "Teach your Cat to better understand and respond to your cues"
+      },
+      {
+        "kind": "list",
+        "text": "Helps your Cat become disciplined with more reliable everyday habits"
+      }
+    ],
+    "image": "/assets/real/cat-session.webp",
+    "reference": "https://petheartfit.in/services/smart-cat-training",
+    "priceNote": "The reference lists ₹28,340 and ₹21,800 with an inconsistent discount. Confirm the payable price before booking."
+  },
+  {
+    "id": "pkg-advance-cat-training",
+    "slug": "advance-cat-training",
+    "title": "Advance Cat Training",
+    "category": "Cat Training",
+    "level": "Cat Training",
+    "duration": "48 sessions 30 mins",
+    "sessions": "48 sessions 30 mins",
+    "price": "Rs 28800",
+    "regularPrice": "Rs 36340",
+    "summary": "Personalised advance cat training with structured sessions and practical pet-parent guidance.",
+    "includes": [
+      "Jump into my Arms",
+      "Smart Commands - Go to bed, Fetch & Drop, Spin",
+      "Hula Hoop Jumping",
+      "Toilet Training (in Litter Box)",
+      "Biting Issue",
+      "Social Etiquettes",
+      "7 Commands - Sit, Stay, Lay down, Come, Go, Hi-Five, Handshake",
+      "3 No commands - No, Don't Jump, Don't eat",
+      "Strengthens your bond with your Cat through rewarding experiences and shared activities",
+      "Teach your Cat to better understand and respond to your cues",
+      "Helps your Cat become disciplined with more reliable everyday habits"
+    ],
+    "content": [],
+    "blocks": [
+      {
+        "kind": "list",
+        "text": "Jump into my Arms"
+      },
+      {
+        "kind": "list",
+        "text": "Smart Commands - Go to bed, Fetch & Drop, Spin"
+      },
+      {
+        "kind": "list",
+        "text": "Hula Hoop Jumping"
+      },
+      {
+        "kind": "list",
+        "text": "Toilet Training (in Litter Box)"
+      },
+      {
+        "kind": "list",
+        "text": "Biting Issue"
+      },
+      {
+        "kind": "list",
+        "text": "Social Etiquettes"
+      },
+      {
+        "kind": "list",
+        "text": "7 Commands - Sit, Stay, Lay down, Come, Go, Hi-Five, Handshake"
+      },
+      {
+        "kind": "list",
+        "text": "3 No commands - No, Don't Jump, Don't eat"
+      },
+      {
+        "kind": "heading",
+        "text": "Cat Training Benefits"
+      },
+      {
+        "kind": "list",
+        "text": "Strengthens your bond with your Cat through rewarding experiences and shared activities"
+      },
+      {
+        "kind": "list",
+        "text": "Teach your Cat to better understand and respond to your cues"
+      },
+      {
+        "kind": "list",
+        "text": "Helps your Cat become disciplined with more reliable everyday habits"
+      }
+    ],
+    "image": "/assets/real/cat-session.webp",
+    "reference": "https://petheartfit.in/services/advance-cat-training"
+  },
+  {
+    "id": "pkg-litter-training-for-cat",
+    "slug": "litter-training-for-cat",
+    "title": "Litter Training For Cat",
+    "category": "Cat Training",
+    "level": "Cat Training",
+    "duration": "8 Sessions",
+    "sessions": "8 Sessions",
+    "price": "12,999",
+    "regularPrice": "17,999",
+    "summary": "Help your pet develop clean habits and positive behavior with Litter Training by Pawrexio. Our professional training program is designed to teach pets proper toilet habits, obedience, and social behavior in a comfortable and stres",
+    "includes": [
+      "Obedience Training",
+      "Socialization",
+      "Body Language Reading",
+      "Fun Activities"
+    ],
+    "content": [
+      "Help your pet develop clean habits and positive behavior with Litter Training by Pawrexio. Our professional training program is designed to teach pets proper toilet habits, obedience, and social behavior in a comfortable and stress-free environment.",
+      "Using gentle and positive reinforcement techniques, we help pets adapt quickly while improving their confidence, communication, and daily discipline."
+    ],
+    "blocks": [
+      {
+        "kind": "paragraph",
+        "text": "Help your pet develop clean habits and positive behavior with Litter Training by Pawrexio. Our professional training program is designed to teach pets proper toilet habits, obedience, and social behavior in a comfortable and stress-free environment."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Using gentle and positive reinforcement techniques, we help pets adapt quickly while improving their confidence, communication, and daily discipline."
+      },
+      {
+        "kind": "list",
+        "text": "Obedience Training"
+      },
+      {
+        "kind": "list",
+        "text": "Socialization"
+      },
+      {
+        "kind": "list",
+        "text": "Body Language Reading"
+      },
+      {
+        "kind": "list",
+        "text": "Fun Activities"
+      }
+    ],
+    "image": "/assets/real/cat-session.webp",
+    "reference": "https://petheartfit.in/services/litter-training-for-cat"
+  },
+  {
+    "id": "pkg-basic-training-for-cat",
+    "slug": "basic-training-for-cat",
+    "title": "Basic Training For Cat",
+    "category": "Cat Training",
+    "level": "Cat Training",
+    "duration": "24 sessions / 2 Months",
+    "sessions": "24 sessions / 2 Months",
+    "price": "16,999",
+    "regularPrice": "19,999",
+    "summary": "Give your pet the perfect foundation with the Basic Training Program by Pawrexio. Designed to improve obedience, communication, confidence, and daily behavior, this program helps pets learn essential skills in a fun, safe, and eng",
+    "includes": [],
+    "content": [
+      "Give your pet the perfect foundation with the Basic Training Program by Pawrexio. Designed to improve obedience, communication, confidence, and daily behavior, this program helps pets learn essential skills in a fun, safe, and engaging environment.",
+      "Our professional trainers use positive reinforcement methods to encourage discipline, social behavior, and better interaction with both humans and other pets.",
+      "Obedience Training",
+      "Socialization",
+      "Body Language Reading",
+      "Fun Activities"
+    ],
+    "blocks": [
+      {
+        "kind": "paragraph",
+        "text": "Give your pet the perfect foundation with the Basic Training Program by Pawrexio. Designed to improve obedience, communication, confidence, and daily behavior, this program helps pets learn essential skills in a fun, safe, and engaging environment."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Our professional trainers use positive reinforcement methods to encourage discipline, social behavior, and better interaction with both humans and other pets."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Obedience Training"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Socialization"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Body Language Reading"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Fun Activities"
+      }
+    ],
+    "image": "/assets/real/cat-session.webp",
+    "reference": "https://petheartfit.in/services/basic-training-for-cat"
+  },
+  {
+    "id": "pkg-advance-training-for-cat",
+    "slug": "advance-training-for-cat",
+    "title": "Advance Training For Cat",
+    "category": "Cat Training",
+    "level": "Cat Training",
+    "duration": "48 sessions / 6 Months",
+    "sessions": "48 sessions / 6 Months",
+    "price": "34,999",
+    "regularPrice": "37,999",
+    "summary": "Transform your cat’s behavior and skills with the Advanced Training Program by Pawrexio. This professionally designed training program focuses on advanced obedience, leash discipline, behavioral improvement, and skill development ",
+    "includes": [],
+    "content": [
+      "Transform your cat’s behavior and skills with the Advanced Training Program by Pawrexio. This professionally designed training program focuses on advanced obedience, leash discipline, behavioral improvement, and skill development to help your cat become a confident, well-mannered, and obedient companion.",
+      "Our experienced trainers use positive reinforcement techniques and structured training sessions to improve focus, discipline, and communication while correcting unwanted behaviors in a safe and engaging environment. Leash Walking",
+      "Advanced Tricks",
+      "Behavioral Modification",
+      "Eliminate Scratching / Biting"
+    ],
+    "blocks": [
+      {
+        "kind": "paragraph",
+        "text": "Transform your cat’s behavior and skills with the Advanced Training Program by Pawrexio. This professionally designed training program focuses on advanced obedience, leash discipline, behavioral improvement, and skill development to help your cat become a confident, well-mannered, and obedient companion."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Our experienced trainers use positive reinforcement techniques and structured training sessions to improve focus, discipline, and communication while correcting unwanted behaviors in a safe and engaging environment. Leash Walking"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Advanced Tricks"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Behavioral Modification"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Eliminate Scratching / Biting"
+      }
+    ],
+    "image": "/assets/real/cat-session.webp",
+    "reference": "https://petheartfit.in/services/advance-training-for-cat"
+  },
+  {
+    "id": "pkg-bath--brush",
+    "slug": "bath--brush",
+    "title": "Bath & Brush",
+    "category": "Grooming",
+    "level": "Grooming",
+    "duration": "Available for Cats & Dogs",
+    "sessions": "Available for Cats & Dogs",
+    "price": "Rs 749",
+    "regularPrice": "Rs 1069",
+    "summary": "Our Bath & Brush service for Cats and Dogs is designed to keep your pet clean, comfortable, and looking their best. Whether it’s a playful pup or a finicky feline, our gentle grooming approach ensures a stress-free experience usin",
+    "includes": [],
+    "content": [
+      "Our Bath & Brush service for Cats and Dogs is designed to keep your pet clean, comfortable, and looking their best. Whether it’s a playful pup or a finicky feline, our gentle grooming approach ensures a stress-free experience using pet-safe shampoos and tools. Each session includes a thorough bath, gentle brushing to remove loose fur and prevent matting, and a quick check for any skin or coat issues. Perfect for regular maintenance or a refreshing treat, this service helps your pet stay fresh, healthy, and happy."
+    ],
+    "blocks": [
+      {
+        "kind": "paragraph",
+        "text": "Our Bath & Brush service for Cats and Dogs is designed to keep your pet clean, comfortable, and looking their best. Whether it’s a playful pup or a finicky feline, our gentle grooming approach ensures a stress-free experience using pet-safe shampoos and tools. Each session includes a thorough bath, gentle brushing to remove loose fur and prevent matting, and a quick check for any skin or coat issues. Perfect for regular maintenance or a refreshing treat, this service helps your pet stay fresh, healthy, and happy."
+      }
+    ],
+    "image": "/assets/real/companions.webp",
+    "reference": "https://petheartfit.in/services/bath--brush"
+  },
+  {
+    "id": "pkg-tick-treatment-with-bath-brush",
+    "slug": "tick-treatment-with-bath-brush",
+    "title": "Tick Treatment With Bath & Brush",
+    "category": "Grooming",
+    "level": "Grooming",
+    "duration": "Available for Cats & Dogs",
+    "sessions": "Available for Cats & Dogs",
+    "price": "Rs 1,150",
+    "regularPrice": "Rs 1,579",
+    "summary": "Our Tick Treatment with Bath & Brush service offers a complete grooming and parasite control solution to keep your dog clean, comfortable, and protected. This treatment includes a thorough bath using vet-approved anti-tick shampoo",
+    "includes": [],
+    "content": [
+      "Our Tick Treatment with Bath & Brush service offers a complete grooming and parasite control solution to keep your dog clean, comfortable, and protected. This treatment includes a thorough bath using vet-approved anti-tick shampoo, followed by careful brushing to remove loose hair and stimulate healthy skin. Designed to eliminate ticks and soothe irritated skin, the session not only helps prevent infestations but also leaves your dog feeling fresh, relaxed, and pampered. Ideal as part of a regular grooming routine or whenever your dog needs extra care after outdoor activities."
+    ],
+    "blocks": [
+      {
+        "kind": "paragraph",
+        "text": "Our Tick Treatment with Bath & Brush service offers a complete grooming and parasite control solution to keep your dog clean, comfortable, and protected. This treatment includes a thorough bath using vet-approved anti-tick shampoo, followed by careful brushing to remove loose hair and stimulate healthy skin. Designed to eliminate ticks and soothe irritated skin, the session not only helps prevent infestations but also leaves your dog feeling fresh, relaxed, and pampered. Ideal as part of a regular grooming routine or whenever your dog needs extra care after outdoor activities."
+      }
+    ],
+    "image": "/assets/real/home-training.webp",
+    "reference": "https://petheartfit.in/services/tick-treatment-with-bath-brush"
+  },
+  {
+    "id": "pkg-haircut-styling",
+    "slug": "haircut-styling",
+    "title": "Haircut & Styling",
+    "category": "Grooming",
+    "level": "Grooming",
+    "duration": "Available for Cats & Dogs",
+    "sessions": "Available for Cats & Dogs",
+    "price": "Rs 1,179",
+    "regularPrice": "Rs 1,629",
+    "summary": "Our Haircut & Styling service offers your dog a professional grooming experience, tailored to their breed, coat type, and personality. Whether your furry friend needs a simple trim or a full grooming session, our experienced groom",
+    "includes": [],
+    "content": [
+      "Our Haircut & Styling service offers your dog a professional grooming experience, tailored to their breed, coat type, and personality. Whether your furry friend needs a simple trim or a full grooming session, our experienced groomers ensure they look and feel their best. Using high-quality products and gentle techniques, we provide everything from stylish cuts to soothing baths, nail trimming, and ear cleaning. With a focus on comfort and safety, your dog will leave feeling refreshed, confident, and looking fabulous—ready to turn heads wherever they go!"
+    ],
+    "blocks": [
+      {
+        "kind": "paragraph",
+        "text": "Our Haircut & Styling service offers your dog a professional grooming experience, tailored to their breed, coat type, and personality. Whether your furry friend needs a simple trim or a full grooming session, our experienced groomers ensure they look and feel their best. Using high-quality products and gentle techniques, we provide everything from stylish cuts to soothing baths, nail trimming, and ear cleaning. With a focus on comfort and safety, your dog will leave feeling refreshed, confident, and looking fabulous—ready to turn heads wherever they go!"
+      }
+    ],
+    "image": "/assets/real/attention.webp",
+    "reference": "https://petheartfit.in/services/haircut-styling"
+  },
+  {
+    "id": "pkg-bath-haircut-styling",
+    "slug": "bath-haircut-styling",
+    "title": "Bath, Haircut & Styling",
+    "category": "Grooming",
+    "level": "Grooming",
+    "duration": "Available for Cats & Dogs",
+    "sessions": "Available for Cats & Dogs",
+    "price": "Rs 1,649",
+    "regularPrice": "Rs 3,298",
+    "summary": "Our Bath, Haircut & Styling service is designed to keep your cats and dogs looking and feeling their best. Whether it's a soothing bath, a stylish haircut, or a complete grooming session, our experienced groomers provide gentle an",
+    "includes": [],
+    "content": [
+      "Our Bath, Haircut & Styling service is designed to keep your cats and dogs looking and feeling their best. Whether it's a soothing bath, a stylish haircut, or a complete grooming session, our experienced groomers provide gentle and professional care tailored to your pet's needs. We use high-quality, pet-friendly products to ensure their coat is clean, shiny, and healthy, while also offering stylish cuts that enhance their natural beauty. From short-haired to long-haired breeds, we ensure your furry friend leaves feeling pampered, refreshed, and ready to show off their new look!"
+    ],
+    "blocks": [
+      {
+        "kind": "paragraph",
+        "text": "Our Bath, Haircut & Styling service is designed to keep your cats and dogs looking and feeling their best. Whether it's a soothing bath, a stylish haircut, or a complete grooming session, our experienced groomers provide gentle and professional care tailored to your pet's needs. We use high-quality, pet-friendly products to ensure their coat is clean, shiny, and healthy, while also offering stylish cuts that enhance their natural beauty. From short-haired to long-haired breeds, we ensure your furry friend leaves feeling pampered, refreshed, and ready to show off their new look!"
+      }
+    ],
+    "image": "/assets/real/indoor-training.webp",
+    "reference": "https://petheartfit.in/services/bath-haircut-styling"
+  },
+  {
+    "id": "pkg-massage-bath-full-haircut-styling",
+    "slug": "massage-bath-full-haircut-styling",
+    "title": "Massage, Bath, Full Haircut & Styling",
+    "category": "Grooming",
+    "level": "Grooming",
+    "duration": "Available for Cats & Dogs",
+    "sessions": "Available for Cats & Dogs",
+    "price": "Rs 1,899",
+    "regularPrice": "Rs 2,699",
+    "summary": "Pamper your furry companion with our Massage, Bath, Full Haircut & Styling services, available for both cats and dogs. Our expert groomers use gentle, pet-friendly products to ensure your pet enjoys a soothing, relaxing experience",
+    "includes": [],
+    "content": [
+      "Pamper your furry companion with our Massage, Bath, Full Haircut & Styling services, available for both cats and dogs. Our expert groomers use gentle, pet-friendly products to ensure your pet enjoys a soothing, relaxing experience while looking their best. From a rejuvenating massage to relieve stress and tension, to a refreshing bath that leaves them smelling fresh, we offer a complete grooming experience. Our professional grooming team also provides precise haircuts and stylish trims, tailored to your pet’s breed and personality. Treat your pet to a spa day, enhancing both their appearance and well-being!"
+    ],
+    "blocks": [
+      {
+        "kind": "paragraph",
+        "text": "Pamper your furry companion with our Massage, Bath, Full Haircut & Styling services, available for both cats and dogs. Our expert groomers use gentle, pet-friendly products to ensure your pet enjoys a soothing, relaxing experience while looking their best. From a rejuvenating massage to relieve stress and tension, to a refreshing bath that leaves them smelling fresh, we offer a complete grooming experience. Our professional grooming team also provides precise haircuts and stylish trims, tailored to your pet’s breed and personality. Treat your pet to a spa day, enhancing both their appearance and well-being!"
+      }
+    ],
+    "image": "/assets/real/companions.webp",
+    "reference": "https://petheartfit.in/services/massage-bath-full-haircut-styling"
+  },
+  {
+    "id": "pkg-proffesional-dog-walker",
+    "slug": "proffesional-dog-walker",
+    "title": "Professional Dog Walker",
+    "category": "Dog Walking",
+    "level": "Dog Walking",
+    "duration": "Per Month (Twice a Day)",
+    "sessions": "Per Month (Twice a Day)",
+    "price": "Rs 7,999",
+    "regularPrice": "Rs 9,600",
+    "summary": "Our Per Month Basic Dog Walking Package offers twice-daily walks designed to keep your dog physically active, mentally stimulated, and emotionally balanced. Perfect for pet parents with busy schedules, this service ensures your do",
+    "includes": [],
+    "content": [
+      "Our Per Month Basic Dog Walking Package offers twice-daily walks designed to keep your dog physically active, mentally stimulated, and emotionally balanced. Perfect for pet parents with busy schedules, this service ensures your dog enjoys consistent morning and evening walks, promoting better health, behavior, and routine. Each walk is led by a caring, trained professional who prioritizes your dog’s safety, comfort, and happiness. Whether it’s a brisk exercise session or a relaxed stroll, we tailor each walk to suit your dog’s unique needs, helping them stay happy, healthy, and well-adjusted."
+    ],
+    "blocks": [
+      {
+        "kind": "paragraph",
+        "text": "Our Per Month Basic Dog Walking Package offers twice-daily walks designed to keep your dog physically active, mentally stimulated, and emotionally balanced. Perfect for pet parents with busy schedules, this service ensures your dog enjoys consistent morning and evening walks, promoting better health, behavior, and routine. Each walk is led by a caring, trained professional who prioritizes your dog’s safety, comfort, and happiness. Whether it’s a brisk exercise session or a relaxed stroll, we tailor each walk to suit your dog’s unique needs, helping them stay happy, healthy, and well-adjusted."
+      }
+    ],
+    "image": "/assets/real/walking.webp",
+    "reference": "https://petheartfit.in/services/proffesional-dog-walker"
+  },
+  {
+    "id": "pkg-premium-dog-walking-package",
+    "slug": "premium-dog-walking-package",
+    "title": "Premium Dog Walking Package",
+    "category": "Dog Walking",
+    "level": "Dog Walking",
+    "duration": "2 Times Daily",
+    "sessions": "2 Times Daily",
+    "price": "14000 / Month",
+    "regularPrice": "16,000",
+    "summary": "Personalised premium dog walking package with structured sessions and practical pet-parent guidance.",
+    "includes": [
+      "Walking Schedule",
+      "Morning Walk: 1 Hour",
+      "Evening Walk: 1 Hour",
+      "Frequency: 2 Times Daily",
+      "Sunday: Off Day"
+    ],
+    "content": [],
+    "blocks": [
+      {
+        "kind": "list",
+        "text": "Walking Schedule"
+      },
+      {
+        "kind": "list",
+        "text": "Morning Walk: 1 Hour"
+      },
+      {
+        "kind": "list",
+        "text": "Evening Walk: 1 Hour"
+      },
+      {
+        "kind": "list",
+        "text": "Frequency: 2 Times Daily"
+      },
+      {
+        "kind": "list",
+        "text": "Sunday: Off Day"
+      }
+    ],
+    "image": "/assets/real/heelwork.webp",
+    "reference": "https://petheartfit.in/services/premium-dog-walking-package"
+  },
+  {
+    "id": "pkg-standard-dog-walking-package",
+    "slug": "standard-dog-walking-package",
+    "title": "Standard Dog Walking Package",
+    "category": "Dog Walking",
+    "level": "Dog Walking",
+    "duration": "30 Minutes Each Walk",
+    "sessions": "30 Minutes Each Walk",
+    "price": "8,000 / Month",
+    "regularPrice": "10,000",
+    "summary": "Keep your dog active, healthy, and stress-free with the Standard Dog Walking Package by Pawrexio. This package is perfect for pet parents looking for regular daily exercise and professional care for their furry companions.",
+    "includes": [
+      "Morning Walk: 30 Minutes",
+      "Evening Walk: 30 Minutes",
+      "Frequency: 2 Times Daily",
+      "Sunday: Off Day"
+    ],
+    "content": [
+      "Keep your dog active, healthy, and stress-free with the Standard Dog Walking Package by Pawrexio. This package is perfect for pet parents looking for regular daily exercise and professional care for their furry companions.",
+      "Our experienced dog walkers provide safe, enjoyable, and engaging walks to ensure your pet stays energetic and happy throughout the day.",
+      "Walking Schedule"
+    ],
+    "blocks": [
+      {
+        "kind": "paragraph",
+        "text": "Keep your dog active, healthy, and stress-free with the Standard Dog Walking Package by Pawrexio. This package is perfect for pet parents looking for regular daily exercise and professional care for their furry companions."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Our experienced dog walkers provide safe, enjoyable, and engaging walks to ensure your pet stays energetic and happy throughout the day."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Walking Schedule"
+      },
+      {
+        "kind": "list",
+        "text": "Morning Walk: 30 Minutes"
+      },
+      {
+        "kind": "list",
+        "text": "Evening Walk: 30 Minutes"
+      },
+      {
+        "kind": "list",
+        "text": "Frequency: 2 Times Daily"
+      },
+      {
+        "kind": "list",
+        "text": "Sunday: Off Day"
+      }
+    ],
+    "image": "/assets/real/leash-foundations.webp",
+    "reference": "https://petheartfit.in/services/standard-dog-walking-package"
+  }
+]

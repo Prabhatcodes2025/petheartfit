@@ -1,0 +1,22 @@
+import { supabase } from './supabase'
+import { services, programs, locations, posts, testimonials, siteSettings } from '../data'
+import photos from '../media.json'
+import videos from '../videos.json'
+import type { ContentBlock } from '../types'
+type DbRow=Record<string,any>
+export const pageMetadata:Record<string,DbRow>={}
+export const galleryMedia:DbRow[]=[...photos.map((p,i)=>({id:'photo-'+i,title:p.title,url:p.file,poster:p.file,type:'image',category:'Training',width:p.width,height:p.height})),...videos]
+const blocks=(value:unknown):ContentBlock[]=>Array.isArray(value)?value.map(x=>typeof x==='string'?{kind:'paragraph',text:x}:x):[]
+const paragraphs=(value:unknown)=>blocks(value).map(b=>b.text)
+const money=(value:unknown)=>value===null||value===undefined?'':`₹${Number(value).toLocaleString('en-IN')}`
+export async function loadPublicContent(){if(!supabase)return;const keys=['services','training_programs','locations','blog_posts','gallery','testimonials','site_settings','seo_metadata'];await Promise.all(keys.map(async key=>{const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),5000);try{let query=supabase!.from(key).select('*');if(['services','training_programs','blog_posts'].includes(key))query=query.eq('status','published');if(['locations','gallery','testimonials'].includes(key))query=query.eq('active',true);if(key==='testimonials')query=query.eq('verified',true);if(key==='blog_posts')query=query.lte('published_at',new Date().toISOString());const {data,error}=await query.abortSignal(controller.signal);if(error||!data)return;const rows=(data as DbRow[]).sort((a,b)=>(a.sort_order||0)-(b.sort_order||0));
+ if(key==='services')services.splice(0,services.length,...rows.map(r=>({id:r.id,slug:r.slug,title:r.title,kicker:r.kicker||'',description:r.description||r.short_description,category:r.category,icon:'dog',duration:r.duration||'',suitable:r.suitable_for||'',benefits:r.benefits||[],includes:r.inclusions||[],content:paragraphs(r.content),image:r.image_url||'/assets/real/companions.webp'})));
+ if(key==='training_programs')programs.splice(0,programs.length,...rows.map(r=>({id:r.id,slug:r.slug,title:r.title,category:r.category,level:r.level||'',duration:r.duration||'',sessions:r.session_count||'',summary:r.summary,includes:r.inclusions||[],content:paragraphs(r.content),blocks:blocks(r.content),price:money(r.sale_price??r.price_from),regularPrice:r.sale_price?money(r.price_from):'',image:r.image_url||'/assets/real/companions.webp'})));
+ if(key==='locations')locations.splice(0,locations.length,...rows.map(r=>({id:r.id,slug:r.slug,city:r.city,state:r.state,heading:r.heading,intro:r.intro,content:paragraphs(r.content),blocks:blocks(r.content),image:r.image_url||'/assets/real/companions.webp'})));
+ if(key==='blog_posts')posts.splice(0,posts.length,...rows.map(r=>({id:r.id,slug:r.slug,title:r.title,excerpt:r.excerpt,category:r.category||'Pet Care',date:r.published_at?.slice(0,10)||'',readTime:Math.max(1,Math.ceil(r.content.split(/\s/).length/200))+' min read',image:r.featured_image_url||'/assets/real/companions.webp',content:r.content.split(/\n\s*\n/)})));
+ if(key==='testimonials')testimonials.splice(0,testimonials.length,...rows.map(r=>({id:r.id,name:r.customer_name,pet:r.pet_name,location:r.location||'',quote:r.content})));
+ if(key==='gallery')galleryMedia.splice(0,galleryMedia.length,...rows.map(r=>({id:r.id,title:r.title,url:r.image_url,poster:r.poster_url||r.image_url,type:r.media_type||'image',category:r.category||'Training',width:600,height:800})));
+ if(key==='site_settings'&&rows[0]){const r=rows[0];Object.assign(siteSettings,{strapline:r.tagline||siteSettings.strapline,phone:r.phone||siteSettings.phone,email:r.public_email||siteSettings.email,whatsapp:r.whatsapp_number||siteSettings.whatsapp,address:r.address||siteSettings.address,footer:r.footer_text||siteSettings.footer,socials:r.social_links||siteSettings.socials})}
+ if(key==='seo_metadata')for(const r of rows)pageMetadata[r.page_key]=r;
+ if(['services','training_programs','locations','blog_posts'].includes(key)){const prefix={services:'/services/',training_programs:'/packages/',locations:'/locations/',blog_posts:'/blog/'}[key]!;for(const r of rows)pageMetadata[prefix+r.slug]={meta_title:r.seo_title,meta_description:r.seo_description,canonical_url:r.canonical_url,og_image_url:r.og_image_url,robots_index:r.robots_index}}
+ }catch{ /* Keep approved bundled content if the connection is unavailable. */ }finally{clearTimeout(timer)}}))}

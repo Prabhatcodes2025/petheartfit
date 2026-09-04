@@ -1,0 +1,10 @@
+import { supabase } from './supabase'
+import { definitions, schemaFor } from '../../shared/cms'
+export type Row=Record<string,unknown>&{id:string}
+export const isPreview=()=>!supabase||sessionStorage.getItem('pawrexio_admin_preview')==='true'
+export async function listRecords(key:string){if(isPreview())return [] as Row[];const {data,error}=await supabase!.from(definitions[key].table).select('*').limit(1000);if(error)throw error;return data as Row[]}
+export async function saveRecord(key:string,values:Record<string,unknown>,id?:string){if(isPreview())throw new Error('Preview only. Connect Supabase and sign in to save live content.');const payload=schemaFor(key).parse(values);if(key==='settings'){const social_links:Record<string,unknown>={};for(const k of ['facebook','instagram','youtube','linkedin']){social_links[k]=payload[k];delete payload[k]}payload.social_links=social_links}
+ for(const k of ['published_at','follow_up_at'])if(k in payload)payload[k]=payload[k]?new Date(String(payload[k])).toISOString():null;
+ const query=id?supabase!.from(definitions[key].table).update({...payload,updated_at:new Date().toISOString()}).eq('id',id):supabase!.from(definitions[key].table).insert(key==='settings'?{...payload,id:'default'}:payload);const {error}=await query;if(error)throw error}
+export async function deleteRecord(key:string,id:string){if(isPreview())throw new Error('Preview only. Sign in to delete records.');const {error}=await supabase!.from(definitions[key].table).delete().eq('id',id);if(error)throw error}
+export async function uploadMedia(file:File){if(isPreview())throw new Error('Connect Supabase and sign in to upload media.');if(!['image/jpeg','image/png','image/webp','video/mp4'].includes(file.type)||file.size>25*1024*1024)throw new Error('Use JPG, PNG, WebP or MP4 up to 25 MB.');const path=crypto.randomUUID()+'.'+file.name.split('.').pop()!.toLowerCase();const {error}=await supabase!.storage.from('media').upload(path,file,{contentType:file.type,upsert:false});if(error)throw error;return supabase!.storage.from('media').getPublicUrl(path).data.publicUrl}
