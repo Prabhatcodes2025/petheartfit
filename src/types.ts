@@ -11,5 +11,5 @@ export type Program = {
 }
 
 export type Location = { id: string; slug: string; city: string; state: string; intro: string; heading?: string; content?: string[]; image?:string; blocks?:ContentBlock[] }
-export type BlogPost = { id: string; slug: string; title: string; excerpt: string; category: string; date: string; readTime: string; image: string; content: string[] }
+export type BlogPost = { id: string; slug: string; title: string; excerpt: string; category: string; date: string; readTime: string; image: string; content: string[]|string }
 export type Testimonial = { id:string; name:string; location:string; pet?:string; quote:string }
