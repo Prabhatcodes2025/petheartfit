@@ -2,6 +2,7 @@ export type Service = {
   id: string; slug: string; title: string; kicker: string; description: string;
   icon: string; duration: string; suitable: string; benefits: string[]; image: string;
   category: 'Dog Training'|'Cat Training'|'Grooming'|'Dog Walking'; includes?: string[]; content?: string[];
+  price?: string; blocks?: ContentBlock[];
 }
 
 export type ContentBlock={kind:string;text:string}

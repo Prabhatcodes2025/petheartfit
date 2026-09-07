@@ -1,21 +1,25 @@
 import { ArrowLeft, ArrowRight, Pause, Play } from 'lucide-react'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
 import { siteSettings } from '../data'
 import { LeadButton } from './LeadPopup'
 const slides = [
   {
-    image: '/assets/real/puppy-focus.webp',
+    image: '/assets/real/obedience.webp',
+    objectPosition: '48% 48%',
+    mobilePosition: '48% 52%',
     eyebrow: '15+ YEARS EXPERIENCE.',
     title: 'Puppy Training | Obedience Training | Behaviour Training | Leash Training'
   },
   {
-    image: '/assets/real/companions.webp',
+    image: '/assets/real/walking.webp',
+    objectPosition: '50% 32%',
+    mobilePosition: '50% 34%',
     eyebrow: '15+ YEARS EXPERIENCE.',
     title: 'Professional Dog Training for Happier, Better-Behaved Pets'
   }
 ]
-export function Hero() { const [current, setCurrent] = useState(0), [playing, setPlaying] = useState(true); const touch = useRef(0); useEffect(() => { if (!playing) return; const id = setInterval(() => setCurrent(v => (v + 1) % slides.length), 6500); return () => clearInterval(id) }, [playing]); const go = (n: number) => setCurrent((n + slides.length) % slides.length); const s = slides[current]; return <section className="hero" onMouseEnter={() => setPlaying(false)} onMouseLeave={() => setPlaying(true)} onTouchStart={e => touch.current = e.touches[0].clientX} onTouchEnd={e => { const d = e.changedTouches[0].clientX - touch.current; if (Math.abs(d) > 50) go(current + (d < 0 ? 1 : -1)) }}><div className="hero-orbit" /><div className="container hero-grid"><div className="hero-content" key={current}><p className="eyebrow">{s.eyebrow}</p><h1>{s.title}</h1><div className="hero-actions">
+export function Hero() { const [current, setCurrent] = useState(0), [playing, setPlaying] = useState(true); const touch = useRef(0); useEffect(() => { if (!playing) return; const id = setInterval(() => setCurrent(v => (v + 1) % slides.length), 6500); return () => clearInterval(id) }, [playing]); const go = (n: number) => setCurrent((n + slides.length) % slides.length); const s = slides[current]; return <section className="hero" style={{'--hero-position':s.objectPosition,'--hero-mobile-position':s.mobilePosition} as CSSProperties} onMouseEnter={() => setPlaying(false)} onMouseLeave={() => setPlaying(true)} onTouchStart={e => touch.current = e.touches[0].clientX} onTouchEnd={e => { const d = e.changedTouches[0].clientX - touch.current; if (Math.abs(d) > 50) go(current + (d < 0 ? 1 : -1)) }}><div className="hero-orbit" /><div className="container hero-grid"><div className="hero-content" key={current}><p className="eyebrow">{s.eyebrow}</p><h1>{s.title}</h1><div className="hero-actions">
   <a
     className="button"
     href={`tel:${siteSettings.phone}`}
