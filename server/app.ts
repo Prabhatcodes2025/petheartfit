@@ -21,15 +21,19 @@ const enquirySchema=z.object({
  source:z.enum(['website','popup']).optional().default('website'),originatingPage:z.string().trim().max(500).optional().default(''),packageSlug:z.string().trim().max(150).optional().default('')
 })
 
-function adminClient(){const url=process.env.SUPABASE_URL;const key=process.env.SUPABASE_SERVICE_ROLE_KEY;return url&&key?createClient(url,key,{auth:{persistSession:false,autoRefreshToken:false}}):null}
-function publicClient(){const url=process.env.SUPABASE_URL;const key=process.env.SUPABASE_ANON_KEY;return url&&key?createClient(url,key,{auth:{persistSession:false,autoRefreshToken:false}}):null}
+// Vercel commonly has the already-working browser variables but not a duplicate
+// unprefixed URL. Reuse that URL server-side while keeping the service-role key
+// server-only (there is deliberately no VITE_ fallback for the privileged key).
+function supabaseUrl(){return process.env.SUPABASE_URL||process.env.VITE_SUPABASE_URL}
+function adminClient(){const url=supabaseUrl();const key=process.env.SUPABASE_SERVICE_ROLE_KEY;return url&&key?createClient(url,key,{auth:{persistSession:false,autoRefreshToken:false}}):null}
+function publicClient(){const url=supabaseUrl();const key=process.env.SUPABASE_ANON_KEY||process.env.VITE_SUPABASE_ANON_KEY;return url&&key?createClient(url,key,{auth:{persistSession:false,autoRefreshToken:false}}):null}
 
 app.get('/api/health',(_req,res)=>res.json({ok:true,database:Boolean(adminClient()),time:new Date().toISOString()}))
 app.post('/api/enquiries',limiter,async(req,res)=>{
  const parsed=enquirySchema.safeParse(req.body)
  if(!parsed.success)return res.status(400).json({message:'Please review the highlighted information.',issues:parsed.error.flatten().fieldErrors})
  const client=adminClient()
- if(!client)return res.status(503).json({message:'Online enquiry storage is being configured. Your details have not been saved. Please call or WhatsApp us.'})
+ if(!client)return res.status(503).json({message:'We could not connect to enquiry storage. Your details have not been saved. Please call or WhatsApp us.'})
  const d=parsed.data
  const {error}=await client.from('enquiries').insert({full_name:d.fullName,phone:d.phone,email:d.email||null,city:d.city,pet_type:d.petType.toLowerCase(),pet_name:d.petName||null,breed:d.breed||null,pet_age:d.petAge||null,service_slug:d.service,behaviour_concern:d.concern,preferred_date:d.preferredDate||null,preferred_time:d.preferredTime||null,message:d.message||null,source:d.source,originating_page:d.originatingPage||null,package_slug:d.packageSlug||null,status:'new'})
  if(error){console.error('[enquiry:create]',error.code);return res.status(500).json({message:'We could not save your enquiry. Please try again shortly.'})}

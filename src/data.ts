@@ -18,7 +18,24 @@ export const services:Service[]=[
  {id:'haircut',slug:'haircut-and-styling',title:'Haircut & Styling',kicker:'Breed and coat-aware styling',description:'Practical trimming and styling tailored to coat type, condition and pet comfort.',icon:'scissors',duration:'Depends on coat and style',suitable:'Suitable dog and cat coats',benefits:['Manageable coat','Hygiene trimming','Comfortable finish'],image:puppy,category:'Grooming'},
  {id:'litter',slug:'litter-training-for-cat',title:'Litter Training for Cat',kicker:'Calmer, cleaner home routines',description:'Environmental and reward-based guidance for litter-box use and related household habits.',icon:'cat',duration:'Details on consultation',suitable:'Kittens and adult cats',benefits:['Appropriate setup','Habit support','Pet-parent guidance'],image:cat,category:'Cat Training'}]
 
-export const programs:Program[]=catalog
+const dogProgramOrder=['puppy-training','basic-training-for-dog','intermediate-dog-training','smart-training-for-dog','advanced-training-for-dog','master-training-for-dog','canine-behaviour-training','canine-behavior-therapy-cbt']
+const catProgramOrder=['kitten-training','basic-cat-training','smart-cat-training']
+const behaviourFeatures=['Excessive Barking','Jumping','Leash Pulling','Basic Obedience','Poor Listening','Unwanted Habits','Basic Socialisation','Impulse Control','Recall Training','Home Manners','Owner Guidance']
+const therapyFeatures=['Aggression','Fear & Anxiety','Separation Problems','Excessive Barking','Leash Reactivity','Destructive Behaviour','Socialisation Problems','Hyperactivity','Impulse Control','Behaviour Modification','Owner Guidance','Regular Progress Check']
+const catPrograms:Record<string,Partial<Program>>={
+ 'kitten-training':{title:'Puppy Training',duration:'1 Month',sessions:'12 Sessions | 1 Month',price:'₹8,999',regularPrice:'',includes:['Litter Training','Basic Commands','Behavior Correction','Scratching Management','Play & Socialization','Diet & Care Guidance']},
+ 'basic-cat-training':{title:'Basic Training',sessions:'24 Sessions',price:'₹17,999',regularPrice:'',includes:['Litter Training','Basic Commands','Behavior Correction','Scratching Management','Play & Socialization','Diet & Care Guidance','Problem Solving']},
+ 'smart-cat-training':{title:'Smart Training',sessions:'48 Sessions',price:'₹34,999',regularPrice:'',includes:['Advanced Commands','Behavior Modification','Litter & Hygiene Training','Scratching Management','Socialization & Confidence','Diet & Care Guidance','Problem Solving','Lifetime Support']}
+}
+function productionProgram(program:Program):Program{
+ let next={...program}
+ if(program.slug==='canine-behaviour-training')next={...next,title:'Canine Behaviour Training',duration:'4 Months',sessions:'48 Sessions | 4 Months',includes:behaviourFeatures,content:behaviourFeatures,blocks:behaviourFeatures.map(text=>({kind:'list',text}))}
+ if(program.slug==='canine-behavior-therapy-cbt')next={...next,title:'Canine Behaviour Therapy Training (CBT)',duration:'6 Months',sessions:'72 Sessions | 6 Months',includes:therapyFeatures,content:therapyFeatures,blocks:therapyFeatures.map(text=>({kind:'list',text}))}
+ if(catPrograms[program.slug]){next={...next,...catPrograms[program.slug]};next.content=next.includes;next.blocks=next.includes.map(text=>({kind:'list',text}))}
+ return next
+}
+const bundledPrograms=(catalog as Program[]).filter(program=>program.category==='Dog Training'?dogProgramOrder.includes(program.slug):program.category==='Cat Training'?catProgramOrder.includes(program.slug):true).map(productionProgram)
+export const programs:Program[]=[...dogProgramOrder.map(slug=>bundledPrograms.find(program=>program.slug===slug)).filter((program):program is Program=>Boolean(program)),...catProgramOrder.map(slug=>bundledPrograms.find(program=>program.slug===slug)).filter((program):program is Program=>Boolean(program)),...bundledPrograms.filter(program=>!['Dog Training','Cat Training'].includes(program.category))]
 export const locations:Location[]=cityContent
 
 export const posts:BlogPost[]=[

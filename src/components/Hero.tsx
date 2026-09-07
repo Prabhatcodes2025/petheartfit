@@ -6,12 +6,12 @@ import { LeadButton } from './LeadPopup'
 const slides = [
   {
     image: '/assets/real/puppy-focus.webp',
-    eyebrow: '10+ YEARS OF EXPERIENCE.',
+    eyebrow: '15+ YEARS EXPERIENCE.',
     title: 'Puppy Training | Obedience Training | Behaviour Training | Leash Training'
   },
   {
     image: '/assets/real/companions.webp',
-    eyebrow: '10+ YEARS OF EXPERIENCE.',
+    eyebrow: '15+ YEARS EXPERIENCE.',
     title: 'Professional Dog Training for Happier, Better-Behaved Pets'
   }
 ]
