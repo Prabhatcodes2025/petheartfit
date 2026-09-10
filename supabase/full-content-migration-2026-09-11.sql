@@ -1,6 +1,53 @@
 -- Pawrexio legacy content migration. Safe to re-run.
 begin;
 
+alter table public.training_programs add column if not exists discount_label text;
+alter table public.training_programs add column if not exists rating numeric(2,1);
+alter table public.training_programs add column if not exists savings numeric(10,2);
+alter table public.training_programs add column if not exists benefits jsonb not null default '[]'::jsonb;
+
+-- Every package that was publicly reachable on the reference site remains public.
+with public_package(slug, sort_order, discount_label, rating, savings) as (values
+ ('basic-training-for-dog',1,'FLAT 21% OFF',4.5,2000),
+ ('smart-training-for-dog',2,'FLAT 10.67% OFF',4.4,4000),
+ ('advanced-training-for-dog',3,'FLAT 7.77% OFF',4.2,4000),
+ ('master-training-for-dog',4,'FLAT 3.33% OFF',5.0,4000),
+ ('canine-behaviour-training',5,'FLAT 17% OFF',5.0,6900),
+ ('canine-behavior-therapy-cbt',6,'FLAT 8% OFF',5.0,4000),
+ ('puppy-training',7,'',5.0,3000),
+ ('intermediate-dog-training',8,'',5.0,6000),
+ ('leash-training-for-dogs',9,'',4.8,null),
+ ('kitten-training',10,'FLAT 20% OFF',4.5,2000),
+ ('basic-cat-training',11,'FLAT 21% OFF',4.9,4000),
+ ('smart-cat-training',12,'30% OFF',4.8,null),
+ ('advance-cat-training',13,'35% OFF',4.9,null),
+ ('litter-training-for-cat',14,'',5.0,5000),
+ ('basic-training-for-cat',15,'',4.9,3000),
+ ('advance-training-for-cat',16,'',5.0,3000),
+ ('bath--brush',17,'',4.6,null),
+ ('tick-treatment-with-bath-brush',18,'',4.9,null),
+ ('haircut-styling',19,'',4.5,null),
+ ('bath-haircut-styling',20,'50% OFF',4.9,1649),
+ ('massage-bath-full-haircut-styling',21,'29% OFF',4.7,800),
+ ('proffesional-dog-walker',22,'FLAT 16% OFF',5.0,1600),
+ ('premium-dog-walking-package',23,'FLAT 20% OFF',5.0,2000),
+ ('standard-dog-walking-package',24,'FLAT 20% OFF',5.0,2000)
+)
+update public.training_programs p set status='published',sort_order=x.sort_order,
+ discount_label=x.discount_label,rating=x.rating,savings=x.savings,updated_at=now()
+from public_package x where p.slug=x.slug;
+
+-- Preserve the newly approved Pawrexio grooming prices over older reference prices.
+update public.training_programs set sale_price=1299,price_from=null,discount_label='',savings=null where slug='bath--brush';
+update public.training_programs set sale_price=1799,price_from=null,discount_label='',savings=null where slug='tick-treatment-with-bath-brush';
+update public.training_programs set sale_price=2199,price_from=null,discount_label='',savings=null where slug='haircut-styling';
+
+-- Restore source-specific public cat pages and their own session/content patterns.
+update public.training_programs set title='Basic Cat Training',duration='24 sessions | 30 mins each',session_count='24 sessions | 30 mins each',status='published' where slug='basic-cat-training';
+update public.training_programs set title='Smart Cat Training',duration='36 sessions | 30 mins each',session_count='36 sessions | 30 mins each',status='published' where slug='smart-cat-training';
+update public.training_programs set title='Advance Cat Training',duration='48 sessions | 30 mins each',session_count='48 sessions | 30 mins each',status='published' where slug='advance-cat-training';
+update public.training_programs set title='Litter Training For Cat',duration='8 Sessions',session_count='8 Sessions',status='published' where slug='litter-training-for-cat';
+
 update public.training_programs set title='Kitten Training', updated_at=now()
 where slug='kitten-training' and category='Cat Training';
 

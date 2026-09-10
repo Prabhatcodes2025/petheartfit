@@ -8,7 +8,7 @@ export type Service = {
 export type ContentBlock={kind:string;text:string}
 export type Program = {
   id: string; slug: string; title: string; level: string; duration: string;
-  summary: string; includes: string[]; image: string; category: string; sessions?: string; price?: string; regularPrice?:string; priceNote?:string; content?:string[]; blocks?:ContentBlock[]; reference?:string;
+  summary: string; includes: string[]; image: string; category: string; sessions?: string; price?: string; regularPrice?:string; priceNote?:string; discount?:string; rating?:string; savings?:string; benefits?:string[]; content?:string[]; blocks?:ContentBlock[]; reference?:string;
 }
 
 export type Location = { id: string; slug: string; city: string; state: string; intro: string; heading?: string; content?: string[]; image?:string; blocks?:ContentBlock[] }
