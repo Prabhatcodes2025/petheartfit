@@ -17,6 +17,13 @@ const slides = [
     mobilePosition: '50% 34%',
     eyebrow: '15+ YEARS EXPERIENCE.',
     title: 'Professional Dog Training for Happier, Better-Behaved Pets'
+  },
+  {
+    image: '/assets/real/companions.webp',
+    objectPosition: '50% 44%',
+    mobilePosition: '52% 46%',
+    eyebrow: 'TRUSTED PET TRAINING & CARE.',
+    title: '15+ Years Experience | 5000+ Pets Trained'
   }
 ]
 export function Hero() { const [current, setCurrent] = useState(0), [playing, setPlaying] = useState(true); const touch = useRef(0); useEffect(() => { if (!playing) return; const id = setInterval(() => setCurrent(v => (v + 1) % slides.length), 6500); return () => clearInterval(id) }, [playing]); const go = (n: number) => setCurrent((n + slides.length) % slides.length); const s = slides[current]; return <section className="hero" style={{'--hero-position':s.objectPosition,'--hero-mobile-position':s.mobilePosition} as CSSProperties} onMouseEnter={() => setPlaying(false)} onMouseLeave={() => setPlaying(true)} onTouchStart={e => touch.current = e.touches[0].clientX} onTouchEnd={e => { const d = e.changedTouches[0].clientX - touch.current; if (Math.abs(d) > 50) go(current + (d < 0 ? 1 : -1)) }}><div className="hero-orbit" /><div className="container hero-grid"><div className="hero-content" key={current}><p className="eyebrow">{s.eyebrow}</p><h1>{s.title}</h1><div className="hero-actions">
