@@ -14,7 +14,10 @@ const pages: Record<string, [string, string]> = {
   '/testimonials': ['Pet Parent Feedback | Pawrexio', 'Read pet-parent feedback about Pawrexio training and care.'],
   '/blog': ['Pet Training Blog & Guides | Pawrexio', 'Practical guidance for puppy training, dog behaviour, leash walking, grooming and cat care.'],
   '/contact': ['Contact Pawrexio | Pet Training Enquiry', 'Tell Pawrexio about your pet, location and training or care needs.'],
-  '/book': ['Book a Free Pet Training Consultation | Pawrexio', 'Request a free Pawrexio consultation for dog training, cat training, grooming or dog walking.']
+  '/book': ['Book a Free Pet Training Consultation | Pawrexio', 'Request a free Pawrexio consultation for dog training, cat training, grooming or dog walking.'],
+  '/faq': ['Pet Training FAQs | Pawrexio', 'Answers about puppy and dog training, cat training, grooming, dog walking, home visits and Pawrexio support.'],
+  '/privacy': ['Privacy Policy | Pawrexio', 'Learn how Pawrexio collects, uses and protects enquiry and service information.'],
+  '/terms': ['Terms & Conditions | Pawrexio', 'Read the terms that apply to Pawrexio enquiries, appointments and pet training or care services.']
 }
 
 function upsertMeta(selector:string, key:'name'|'property', keyValue:string, content:string){
@@ -31,7 +34,7 @@ export function Seo(){
     const slug=pathname.split('/').pop()
     if(pathname.startsWith('/services/')){const item=services.find(x=>x.slug===slug);if(item){meta=[`${item.title} | Pawrexio`,item.description];schema={'@context':'https://schema.org','@type':'Service',name:item.title,description:item.description,provider:{'@type':'Organization',name:'Pawrexio'}}}}
     else if(pathname.startsWith('/packages/')){const item=programs.find(x=>x.slug===slug);if(item){meta=[`${item.title} Package | Pawrexio`,item.summary];schema={'@context':'https://schema.org','@type':'Service',name:item.title,description:item.summary,provider:{'@type':'Organization',name:'Pawrexio'}}}}
-    else if(pathname.startsWith('/locations/')){const item=locations.find(x=>x.slug===slug);if(item)meta=[`Pet Training in ${item.city} | Pawrexio`,item.intro]}
+    else if(pathname.startsWith('/locations/')){const item=locations.find(x=>x.slug===slug);if(item){meta=[`Pet Training in ${item.city} | Pawrexio`,item.intro];schema={'@context':'https://schema.org','@type':['LocalBusiness','ProfessionalService'],name:`Pawrexio Pet Training in ${item.city}`,description:item.intro,url:`${base}${pathname}`,telephone:siteSettings.phone,email:siteSettings.email,areaServed:item.city,provider:{'@type':'Organization',name:'Pawrexio'}}}}
     else if(pathname.startsWith('/blog/')){const item=posts.find(x=>x.slug===slug);if(item){meta=[`${item.title} | Pawrexio`,item.excerpt];schema={'@context':'https://schema.org','@type':'Article',headline:item.title,description:item.excerpt,image:`${base}${item.image}`,author:{'@type':'Organization',name:'Pawrexio'}}}}
     else if(pathname==='/faq')schema={'@context':'https://schema.org','@type':'FAQPage',mainEntity:faqs.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}}))}
     if(!meta)meta=['Pawrexio | Love, Care, Companionship','Professional pet training and care from Pawrexio.']

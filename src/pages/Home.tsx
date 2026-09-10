@@ -8,7 +8,7 @@ import { TrainingVideo } from '../components/Media'
 import { Reveal } from '../components/Reveal'
 import { faqs, locations, posts, programs, services, siteSettings, testimonials } from '../data'
 
-const behaviours=[['Puppy habits','Toilet routines, biting, chewing and early manners.'],['Leash pulling','Calmer walks, useful check-ins and safe handling.'],['Obedience','Clear responses to sit, stay, come and settle.'],['Excessive barking','Understand triggers and build more appropriate responses.'],['Aggression & fear','Assessment-led support for reactivity and difficult behaviour.'],['Home training','Work on behaviour where it occurs every day.']]
+const behaviours=[['Puppy Training','Toilet routines, biting, chewing and early manners.'],['Leash Training','Calmer walks, useful check-ins and safe handling.'],['Dog Obedience Training','Clear responses to sit, stay, come and settle.'],['Excessive Barking','Understand triggers and build more appropriate responses.'],['Aggression & Behaviour Issues','Assessment-led support for reactivity and difficult behaviour.'],['Dog Training at Home','Work on behaviour where it occurs every day.']]
 const ownerTips=[
  [House,'Create a Safe Home','Prepare a comfortable, clean, and secure environment where your pet feels protected and relaxed.'],
  [GraduationCap,'Start Training Early','Early puppy training teaches good behaviour, basic commands, and builds lifelong confidence.'],
