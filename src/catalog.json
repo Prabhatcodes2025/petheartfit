@@ -760,7 +760,7 @@
       "Touch Acceptance (to be friendly)",
       "Basic House Rules",
       "7 Commands - Sit, Stay, Lay down, Come, Go, Hi-Five, Handshake",
-      "3 No commands - No, Don't Jump, Don't eat.t (provided on app)",
+      "3 No commands - No, Don't Jump, Don't Eat (provided on app)",
       "Strengthens your bond with your Cat through rewarding experiences and shared activities",
       "Teach your Cat to better understand and respond to your cues",
       "Helps your Cat become disciplined with more reliable everyday habits"
@@ -793,7 +793,7 @@
       },
       {
         "kind": "list",
-        "text": "3 No commands - No, Don't Jump, Don't eat.t (provided on app)"
+        "text": "3 No commands - No, Don't Jump, Don't Eat (provided on app)"
       },
       {
         "kind": "heading",
