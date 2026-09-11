@@ -1,4 +1,5 @@
 import { Activity, ArrowRight, Award, BadgeCheck, CalendarClock, Cat, Check, Footprints, GraduationCap, Headphones, HeartHandshake, House, MessageCircle, Phone, Scissors, Stethoscope } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FAQList } from '../components/FAQ'
 import { Hero } from '../components/Hero'
@@ -37,6 +38,29 @@ const categoryCopy:Record<string,string>={
  'dog-walking':'Pawrexio’s dog walking service is designed to keep your furry friend physically active, me..'
 }
 
+function CountUp({target,label}:{target:number;label:string}){
+ const [value,setValue]=useState(0)
+ const node=useRef<HTMLDivElement>(null)
+ const played=useRef(false)
+ useEffect(()=>{
+  const element=node.current
+  if(!element)return
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches
+  const observer=new IntersectionObserver(([entry])=>{
+   if(!entry.isIntersecting||played.current)return
+   played.current=true
+   if(reduce){setValue(target);observer.disconnect();return}
+   const started=performance.now(),duration=1400
+   const tick=(now:number)=>{const progress=Math.min((now-started)/duration,1);setValue(Math.round(target*(1-Math.pow(1-progress,3))));if(progress<1)requestAnimationFrame(tick)}
+   requestAnimationFrame(tick)
+   observer.disconnect()
+  },{threshold:.35})
+  observer.observe(element)
+  return()=>observer.disconnect()
+ },[target])
+ return <div ref={node}><strong>{value}</strong><span>{label}</span></div>
+}
+
 export default function Home(){
  const categories=services.filter(s=>['dog-training','cat-training','grooming','dog-walking'].includes(s.slug))
  const featured=featuredLocations.map(slug=>locations.find(location=>location.slug===slug)).filter((location):location is NonNullable<typeof location>=>Boolean(location))
@@ -56,7 +80,7 @@ export default function Home(){
 
   <div className="home-video-heading container"><p className="eyebrow">Our Videos</p><h2>Explore Our Locations</h2><p>Take a closer look at our training, facilities and the experience we provide to pet parents.</p></div><TrainingVideo/>
 
-  <section className="section pawrexio-story"><div className="container"><div className="pawrexio-story-grid"><Reveal><h1 className="story-title">Pawrexio – Because Every Pet Deserves to Be Understood | Professional Dog Trainer in India</h1><p>The day a pet enters your home, they become more than just an animal, they become family. They celebrate your happiest moments, comfort you on difficult days, and love you without expecting anything in return. But unlike us, they can't tell us when they're anxious, confused, or trying to understand the world around them. Instead, they communicate through their behaviour.</p><h2>That's Where We Come In</h2><p>With over 15+ years of experience, Pawrexio has helped thousands of pets and pet parents build stronger relationships through trust, patience, and positive training. Whether it's a playful puppy learning basic manners, a dog struggling with behavioural challenges, or a pet that simply needs a little extra care, our <strong>Professional Dog Trainer in India</strong> is here to help.</p><p>From Professional Dog Trainer, Puppy Training, Dog Walking Services, Leash Training for Dogs, Pet Grooming Services, Cat Training Services, and Dog Grooming at Home, we believe every pet deserves to feel understood, loved, and confident. ❤️</p><h2 className="story-transform">Transforming Pets into Happy, Well-Trained Companions</h2><p>At Pawrexio, we don't just train pets, we build lifelong friendships. Less stress, happier pets, and a stronger bond between you and your furry friend through positive, compassionate training.</p></Reveal><Reveal className="story-real-media"><img src="/assets/real/reward-training.webp" alt="Pawrexio positive pet training session" loading="lazy"/></Reveal></div><div className="trust-card-grid">{[[Award,'15+ Years Experience','Trusted by thousands of happy pet parents across India.'],[BadgeCheck,'5000+ Pets Trained','Professional training for dogs, puppies & cats.'],[HeartHandshake,'Positive Training','Reward-based methods that create confident pets.'],[Headphones,'24/7 Support','Always available to guide you through every step.']].map(([Icon,title,text])=><Reveal className="trust-card" key={String(title)}>{typeof Icon!=='string'&&<Icon/>}<h3>{String(title)}</h3><p>{String(text)}</p></Reveal>)}</div><div className="counter-row">{[['5000+','Pets Trained'],['Thousands','Happy Customers'],['15+ Years','Experience'],['Nationwide','Expert Team']].map(([number,label])=><div key={label}><strong>{number}</strong><span>{label}</span></div>)}</div></div></section>
+  <section className="section pawrexio-story"><div className="container"><div className="pawrexio-story-grid"><Reveal><h1 className="story-title">Pawrexio – Because Every Pet Deserves to Be Understood | Professional Dog Trainer in India</h1><p>The day a pet enters your home, they become more than just an animal, they become family. They celebrate your happiest moments, comfort you on difficult days, and love you without expecting anything in return. But unlike us, they can't tell us when they're anxious, confused, or trying to understand the world around them. Instead, they communicate through their behaviour.</p><h2>That's Where We Come In</h2><p>With over 15+ years of experience, Pawrexio has helped thousands of pets and pet parents build stronger relationships through trust, patience, and positive training. Whether it's a playful puppy learning basic manners, a dog struggling with behavioural challenges, or a pet that simply needs a little extra care, our <strong>Professional Dog Trainer in India</strong> is here to help.</p><p>From Professional Dog Trainer, Puppy Training, Dog Walking Services, Leash Training for Dogs, Pet Grooming Services, Cat Training Services, and Dog Grooming at Home, we believe every pet deserves to feel understood, loved, and confident. ❤️</p><h2 className="story-transform">Transforming Pets into Happy, Well-Trained Companions</h2><p>At Pawrexio, we don't just train pets, we build lifelong friendships. Less stress, happier pets, and a stronger bond between you and your furry friend through positive, compassionate training.</p></Reveal><Reveal className="story-real-media"><img src="/assets/real/reward-training.webp" alt="Pawrexio positive pet training session" loading="lazy"/></Reveal></div><div className="trust-card-grid">{[[Award,'15+ Years Experience','Trusted by thousands of happy pet parents across India.'],[BadgeCheck,'5000+ Pets Trained','Professional training for dogs, puppies & cats.'],[HeartHandshake,'Positive Training','Reward-based methods that create confident pets.'],[Headphones,'24/7 Support','Always available to guide you through every step.']].map(([Icon,title,text])=><Reveal className="trust-card" key={String(title)}>{typeof Icon!=='string'&&<Icon/>}<h3>{String(title)}</h3><p>{String(text)}</p></Reveal>)}</div><div className="counter-row"><CountUp target={5000} label="Pets Trained"/><CountUp target={1457} label="Happy Customers"/><CountUp target={10} label="Experience"/><CountUp target={20} label="Our Staffs"/></div></div></section>
 
   <section className="section location-preview"><div className="container"><SectionTitle eyebrow="Our Locations" title="Find Us Near You" text="Visit our conveniently located offices across Delhi NCR. Choose your nearest location and connect with our team today."/><div className="location-mini-grid featured-location-grid">{featured.map(l=><Link to={`/locations/${l.slug}`} key={l.id}><span>{l.state}</span><h3>{l.heading}</h3><p>{l.intro.slice(0,150)}…</p><b>Explore Location <ArrowRight/></b></Link>)}</div><div className="center-action"><Link className="button button-ghost" to="/locations">View All Locations <ArrowRight/></Link></div></div></section>
 
