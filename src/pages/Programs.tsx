@@ -10,7 +10,7 @@ import type { Program } from '../types'
 export function PackageCards({items,baseRoute='/packages'}:{items:Program[];baseRoute?:string}) {
  return <div className="package-grid">{items.map(p=><article className="package-card" key={p.id}>
   <img src={p.image} alt={p.category==='Cat Training'?'Cat in a Pawrexio care setting':'Pawrexio pet training'} width="600" height="500" loading="lazy"/>
-  <div><p className="eyebrow">{p.category}</p><h3>{p.title}</h3><b className="package-duration">{p.sessions||p.duration}</b><p>{p.summary}</p>
+  <div><p className="eyebrow">{p.category}</p><h3>{p.title}</h3><b className="package-duration">{p.sessions||p.duration}</b>{p.price&&<p className="package-price">{p.regularPrice&&<del>{p.regularPrice}</del>} <strong>{p.price}</strong></p>}<p>{p.summary}</p>
    <div className="card-actions"><Link className="button" to={`${baseRoute}/${p.slug}`}>Check Price <ArrowRight/></Link><a className="button button-outline" href={whatsapp(p.title)} target="_blank" rel="noreferrer"><MessageCircle/>WhatsApp</a></div>
   </div>
  </article>)}</div>
