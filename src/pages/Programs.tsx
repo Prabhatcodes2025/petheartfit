@@ -20,14 +20,14 @@ export function Programs(){return <><PageHero eyebrow="Training & care packages"
 
 const ownerGuide=[
  ['Create a Safe Home','Prepare a clean, secure space where your pet can relax.'],
- ['Start Training Early','Teach good behaviour and basic cues from the beginning.'],
- ['Follow a Routine','Keep feeding, exercise, sleep and training predictable.'],
+ ['Start Puppy Training Early','Teach basic commands and good behaviour from day one.'],
+ ['Daily Routine','Maintain consistent feeding, exercise and sleep schedules.'],
  ['Leash Training','Build safe, calm walking manners with patient practice.'],
- ['Keep Them Active','Daily movement supports fitness, confidence and wellbeing.'],
- ['Regular Grooming','Maintain coat, skin, nails, ears and everyday comfort.'],
- ['Understand Your Cat','Support natural behaviour, communication and positive habits.'],
+ ['Dog Walking','Regular walks keep pets physically active and mentally stimulated.'],
+ ['Pet Grooming','Keep your pet clean and healthy with professional grooming.'],
+ ['Cat Behaviour','Encourage positive habits and stress-free living with expert guidance.'],
  ['Reward Good Behaviour','Use praise, food and play to reinforce useful choices.'],
- ['Routine Vet Care','Plan regular check-ups, vaccines and preventive care.']
+ ['Regular Vet Visits','Routine health check-ups and vaccinations keep pets healthy.']
 ]
 
 export function ProgramDetail(){
@@ -53,7 +53,7 @@ export function ProgramDetail(){
     <div className="legacy-detail-actions"><LeadButton service={p.title} package={p.slug}>Book a Session</LeadButton><a className="button button-outline" href={whatsapp(p.title)} target="_blank" rel="noreferrer"><MessageCircle/>WhatsApp</a></div>
    </article>
   </div></section>
-  <section className="section package-assurance"><div className="container"><p className="eyebrow">Fast, Certified &amp; Trusted Worldwide</p><h2>Professional Pet Training &amp; Care Services</h2><p>Pawrexio provides trusted pet training and care with certified trainers, positive methods and practical support for pet parents.</p><div className="trust-card-grid">{[['Affordable Pricing','Transparent and budget-friendly pricing with no hidden charges.'],['Guaranteed Results','Structured programs focused on meaningful progress and customer satisfaction.'],['Certified Trainers','Experienced pet experts providing personalised care and training.'],['24/7 Support','Dedicated online guidance whenever you need support.']].map(([title,text])=><article className="trust-card" key={title}><Check/><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
-  <section className="section legacy-owner-guide"><div className="container"><p className="eyebrow">First-Time Pet Owner Guide</p><h2>Give Your Pet the Best Start</h2><p>The first few weeks are the most important for building a healthy routine, trust and confidence.</p><div className="owner-tip-grid">{ownerGuide.map(([title,text],i)=><article className="owner-tip-card" key={title}><span>{String(i+1).padStart(2,'0')}</span><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
+  <section className="section package-assurance"><div className="container"><p className="eyebrow">Fast, Certified &amp; Trusted Worldwide</p><h2>Professional Pet Training &amp; Care Services</h2><p>Pawrexio is your trusted partner for Professional Dog Training, Puppy Training, Cat Training, Dog Walking, Pet Grooming and Dog Grooming at Home. We help pet parents raise happy, healthy and well-behaved companions with certified trainers and positive training methods.</p><div className="trust-card-grid">{[['Affordable Pricing','Transparent and budget-friendly pricing with no hidden charges.'],['Guaranteed Results','Proven training methods with customer satisfaction guaranteed.'],['Certified Trainers','Experienced pet experts providing personalized care and training.'],['24/7 Support','Dedicated online support whenever you need guidance.']].map(([title,text])=><article className="trust-card" key={title}><Check/><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
+  <section className="section legacy-owner-guide"><div className="container"><p className="eyebrow">First-Time Pet Owner Guide</p><h2>Give Your Pet the Best Start</h2><p>The first few weeks are the most important for building a lifelong bond. Follow these simple tips to keep your furry companion happy and healthy.</p><div className="owner-tip-grid">{ownerGuide.map(([title,text],i)=><article className="owner-tip-card" key={title}><span>{String(i+1).padStart(2,'0')}</span><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
  </>
 }
