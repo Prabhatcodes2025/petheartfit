@@ -7,6 +7,7 @@ import { FAQList } from '../components/FAQ'
 import { PageHero, SectionTitle } from '../components/Layout'
 import { LeadButton } from '../components/LeadPopup'
 import { MediaGallery } from '../components/Media'
+import { FeedbackForm } from '../components/FeedbackForm'
 import { faqs, locations, posts, siteSettings, testimonials } from '../data'
 
 const aboutStrengths = [
@@ -126,7 +127,7 @@ export function Testimonials() {
     <PageHero eyebrow="" title="Feedback" text="Share your experience with Pawrexio." />
     <section className="section reference-feedback"><div className="container reference-feedback-grid">
       <div><p className="eyebrow">Feedback</p><h1>Share Your Experience With Us</h1><p>Your feedback helps us continue improving the care and training support we provide to pets and their families.</p></div>
-      <div className="reference-feedback-card"><h2>You can submit your feedback.</h2><p>Tell us your name, location and experience. Our team will collect the details securely through the existing enquiry form.</p><LeadButton service="Feedback">Submit Feedback</LeadButton></div>
+      <div className="reference-feedback-card"><h2>You can submit your feedback.</h2><p>Tell us your name, rating and experience. New reviews follow our approval process before appearing publicly.</p><FeedbackForm/></div>
     </div><div className="container feedback-review-grid">{testimonials.map((item,index)=><article className="feedback-review-card" key={item.id}><span aria-hidden="true">“</span><p>{item.quote}</p><footer><b>{item.name}</b><small>{item.location||item.pet}</small><em>0{index+1}</em></footer></article>)}</div></section>
   </>
 }

@@ -20,6 +20,7 @@ const enquirySchema=z.object({
  preferredDate:z.string().max(20),preferredTime:z.string().max(30),message:z.string().trim().max(3000),website:z.string().max(0),
  source:z.enum(['website','popup']).optional().default('website'),originatingPage:z.string().trim().max(500).optional().default(''),packageSlug:z.string().trim().max(150).optional().default('')
 })
+const feedbackSchema=z.object({name:z.string().trim().min(2).max(100),rating:z.coerce.number().int().min(1).max(5),feedback:z.string().trim().min(10).max(3000),website:z.string().max(0)})
 
 // Vercel commonly has the already-working browser variables but not a duplicate
 // unprefixed URL. Reuse that URL server-side while keeping the service-role key
@@ -37,6 +38,16 @@ app.post('/api/enquiries',limiter,async(req,res)=>{
  const d=parsed.data
  const {error}=await client.from('enquiries').insert({full_name:d.fullName,phone:d.phone,email:d.email||null,city:d.city,pet_type:d.petType.toLowerCase(),pet_name:d.petName||null,breed:d.breed||null,pet_age:d.petAge||null,service_slug:d.service,behaviour_concern:d.concern,preferred_date:d.preferredDate||null,preferred_time:d.preferredTime||null,message:d.message||null,source:d.source,originating_page:d.originatingPage||null,package_slug:d.packageSlug||null,status:'new'})
  if(error){console.error('[enquiry:create]',error.code);return res.status(500).json({message:'We could not save your enquiry. Please try again shortly.'})}
+ res.status(201).json({ok:true})
+})
+app.post('/api/feedback',limiter,async(req,res)=>{
+ const parsed=feedbackSchema.safeParse(req.body)
+ if(!parsed.success)return res.status(400).json({message:'Please complete your name, rating and feedback.'})
+ const client=adminClient()
+ if(!client)return res.status(503).json({message:'We could not connect to feedback storage. Please try again later.'})
+ const d=parsed.data
+ const {error}=await client.from('testimonials').insert({customer_name:d.name,rating:d.rating,content:d.feedback,verified:false,active:false,sort_order:0})
+ if(error){console.error('[feedback:create]',error.code);return res.status(500).json({message:'We could not save your feedback. Please try again shortly.'})}
  res.status(201).json({ok:true})
 })
 
