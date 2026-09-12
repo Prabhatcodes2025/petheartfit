@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FAQList } from '../components/FAQ'
 import { Hero } from '../components/Hero'
-import { HomeEnquiry } from '../components/HomeEnquiry'
+import { EnquiryVisual, HomeEnquiry } from '../components/HomeEnquiry'
 import { SectionTitle, whatsapp } from '../components/Layout'
 import { LeadButton } from '../components/LeadPopup'
 import { TrainingVideo } from '../components/Media'
@@ -75,7 +75,7 @@ export default function Home(){
 
   <section className="section services-home"><div className="container"><SectionTitle eyebrow="All Services" title="Our Services"/><div className="service-category-grid">{categories.map((s,i)=>{const title=s.slug==='grooming'?'Grooming':s.slug==='dog-walking'?'Walking':s.title;return <Reveal className="service-category" key={s.id}><span>{String(i+1).padStart(2,'0')}</span><img src={s.image} alt="" loading="lazy"/><div><h3>{title}</h3><small>{categoryCopy[s.slug]}</small><div className="card-actions"><Link className="service-know-more" to={`/services/${s.slug}`}>Know More <ArrowRight/></Link><a className="button service-whatsapp" href={whatsapp(title)} target="_blank" rel="noreferrer">Whatsapp</a></div></div></Reveal>})}</div></div></section>
 
-  <section className="section home-enquiry"><div className="container home-enquiry-grid"><div className="home-enquiry-visual"><h3>Send your enquiry</h3><img src="/assets/real/attention.webp" alt="Pawrexio trainer working attentively with a dog" loading="lazy" width="720" height="560"/></div><HomeEnquiry/></div></section>
+  <section className="section home-enquiry"><div className="container home-enquiry-grid"><EnquiryVisual/><HomeEnquiry/></div></section>
 
   <section className="section worldwide-section"><div className="container worldwide-grid"><Reveal className="worldwide-media"><img src="/assets/real/obedience.webp" alt="Pawrexio trainer working with a dog" loading="lazy"/></Reveal><Reveal><p className="eyebrow">Pawrexio</p><h2>Fast, certified &amp; trusted worldwide services</h2><p>Pawrexio is a leading provider of Pet Training, Puppy Training, and professional pet care services in India, dedicated to helping pet parents raise well-mannered, confident, and happy pets. With a strong focus on compassionate and positive training methods, Pawrexio has earned the trust of pet owners across the country.</p><p>From expert Leash Training for Dogs to personalized Cat Training Services, our certified trainers deliver effective solutions tailored to every pet’s behavior and needs. We also offer reliable Dog Walking Services, premium Pet Grooming Services, and convenient Dog Grooming at Home options to ensure complete care for your furry companions.</p><ul className="worldwide-benefits"><li><Check/>Transparent, reliable, and budget-friendly pricing</li><li><Check/>Positive, personalized training focused on measurable behavioural improvement.</li><li><Check/>Expert trainers with 24/7 dedicated online support</li></ul><Link className="button" to="/about">Know More <ArrowRight/></Link></Reveal></div></section>
 
