@@ -263,10 +263,12 @@ html body div#chat-bot-message-container{display:none!important}
 @media(max-width:500px){.contact-trust{padding:22px 0}.contact-trust .trust-inner article{min-height:0;padding:20px}.article-featured-image{aspect-ratio:4/3;margin-bottom:38px;border-radius:11px}.reference-about-strengths .faq-item button,.reference-about-faq .faq-item button{padding-inline:14px}.reference-about-strengths .faq-answer p,.reference-about-faq .faq-answer p{padding-right:14px}.rich-content .location-training-heading{font-size:1.35rem}}
 
 /* Targeted hero and floating-contact positioning. */
+.legacy-hero .hero-controls{top:0;right:0;bottom:0;height:100%}
+.legacy-hero .hero-arrows{height:100%}
 .legacy-hero .hero-arrows button{top:62%}
 .desktop-contact-float{display:none}
 @media(min-width:1024px){
- .desktop-contact-float{position:fixed;z-index:86;left:0;top:58%;display:flex;flex-direction:column;align-items:flex-start;gap:8px;transform:translateY(-50%);transition:opacity .22s,transform .22s}
+ .desktop-contact-float{position:fixed;z-index:86;left:0;top:70%;display:flex;flex-direction:column;align-items:flex-start;gap:8px;transform:translateY(-50%);transition:opacity .22s,transform .22s}
  .desktop-contact-float.hidden{opacity:0;pointer-events:none;transform:translate(-18px,-50%)}
  .desktop-contact-float a{display:flex;align-items:center;width:52px;height:52px;overflow:hidden;border-radius:0 12px 12px 0;color:#fff;box-shadow:0 9px 28px rgba(6,39,68,.22);transition:width .25s,transform .2s,box-shadow .2s}
  .desktop-contact-float a:hover,.desktop-contact-float a:focus-visible{width:146px;transform:translateX(3px);box-shadow:0 13px 34px rgba(6,39,68,.3)}
@@ -277,5 +279,5 @@ html body div#chat-bot-message-container{display:none!important}
  .desktop-float-whatsapp{background:#167c4a;border:1px solid rgba(255,255,255,.24)}
 }
 @media(max-width:1023px){.desktop-contact-float{display:none!important}}
-@media(max-width:767px){.legacy-hero .hero-arrows{display:block}.legacy-hero .hero-arrows button{top:66%;width:44px;height:44px;background:rgba(6,39,68,.72);box-shadow:0 6px 18px rgba(0,0,0,.22)}.legacy-hero .hero-arrows button:first-child{left:10px}.legacy-hero .hero-arrows button:last-child{right:10px}}
+@media(max-width:767px){.legacy-hero{display:block!important}.legacy-hero .hero-controls{position:absolute;padding:0}.legacy-hero .hero-arrows{display:block}.legacy-hero .hero-arrows button{top:66%;width:44px;height:44px;background:rgba(6,39,68,.72);box-shadow:0 6px 18px rgba(0,0,0,.22)}.legacy-hero .hero-arrows button:first-child{left:10px}.legacy-hero .hero-arrows button:last-child{right:10px}}
 @media(prefers-reduced-motion:reduce){.desktop-contact-float,.desktop-contact-float a{transition:none}}
