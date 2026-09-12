@@ -279,5 +279,4 @@ html body div#chat-bot-message-container{display:none!important}
  .desktop-float-whatsapp{background:#167c4a;border:1px solid rgba(255,255,255,.24)}
 }
 @media(max-width:1023px){.desktop-contact-float{display:none!important}}
-@media(max-width:767px){.legacy-hero{display:block!important}.legacy-hero .hero-controls{position:absolute;padding:0}.legacy-hero .hero-arrows{display:block}.legacy-hero .hero-arrows button{top:66%;width:44px;height:44px;background:rgba(6,39,68,.72);box-shadow:0 6px 18px rgba(0,0,0,.22)}.legacy-hero .hero-arrows button:first-child{left:10px}.legacy-hero .hero-arrows button:last-child{right:10px}}
 @media(prefers-reduced-motion:reduce){.desktop-contact-float,.desktop-contact-float a{transition:none}}
