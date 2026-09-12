@@ -43,7 +43,7 @@ export function About() {
       </div>
     </section>
     <section className="section reference-about-strengths"><div className="container"><FAQList items={aboutStrengths} /></div></section>
-    <section className="section"><div className="container narrow"><FAQList items={aboutFaqs} /></div></section>
+    <section className="section reference-about-faq"><div className="container narrow"><FAQList items={aboutFaqs} /></div></section>
   </>
 }
 
@@ -82,7 +82,7 @@ export function BlogDetail() {
   return <>
     <PageHero eyebrow={`${post.category} · ${post.readTime}`} title={title} text={post.excerpt} image={post.image} />
     <Breadcrumb items={[{ label: 'Blogs', to: '/blog' }, { label: title }]} />
-    <article className="article container"><div className="article-meta"><span>Published {post.date}</span></div><BlogContent content={post.content} /><LeadButton service={post.category}>Discuss your pet</LeadButton></article>
+    <article className="article container"><div className="article-meta"><span>Published {post.date}</span></div><img className="article-featured-image" src={post.image} alt={title} loading="lazy"/><BlogContent content={post.content} /><LeadButton service={post.category}>Discuss your pet</LeadButton></article>
     <section className="section related"><div className="container"><SectionTitle eyebrow="Keep learning" title="Related blogs" /><div className="blog-mini-grid">{related.map(item => <Link to={`/blog/${item.slug}`} key={item.id}><img src={item.image} alt="" loading="lazy" /><p>{item.category} · {item.readTime}</p><h3>{blogTitles[item.slug] || item.title}</h3><span>Read More <ArrowRight /></span></Link>)}</div></div></section>
   </>
 }
@@ -117,7 +117,7 @@ export function LocationDetail() {
         <nav aria-label="Other locations"><h2>Other Locations</h2>{locations.filter(item => item.id !== location.id).map(item => <Link key={item.id} to={`/location/pet-training-in-${item.slug}`}>{item.city}</Link>)}</nav>
         <div className="detail-aside"><p className="eyebrow">Have Any Questions?</p><h3>Talk to Pawrexio</h3><p>Share your locality and your pet’s needs so we can confirm coverage and the right service.</p><a href={`tel:${siteSettings.phone}`}>{siteSettings.phone}</a><LeadButton location={location.city}>Book Your Service</LeadButton></div>
       </aside>
-      <article className="legacy-package-main"><img className="legacy-package-image" src={location.image} alt={`Pawrexio pet training in ${location.city}`} /><Content blocks={location.blocks} /><div className="legacy-detail-actions"><LeadButton location={location.city}>Book Your Service</LeadButton><a className="button button-outline" href={`tel:${siteSettings.phone}`}>Call Now</a></div></article>
+      <article className="legacy-package-main"><img className="legacy-package-image" src={location.image} alt={`Pawrexio pet training in ${location.city}`} /><Content blocks={location.blocks} locationHierarchy/><div className="legacy-detail-actions"><LeadButton location={location.city}>Book Your Service</LeadButton><a className="button button-outline" href={`tel:${siteSettings.phone}`}>Call Now</a></div></article>
     </div></section>
   </>
 }
