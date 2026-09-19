@@ -95,6 +95,6 @@ export default function Home(){
 
   <section className="section gallery-preview"><div className="container"><h2>What we have done</h2><div className="home-old-gallery">{galleryMedia.filter(item=>item.type==='image').slice(0,13).map(item=><a href={item.url} target="_blank" rel="noreferrer" key={item.id}><img src={item.url} alt={item.title} loading="lazy"/></a>)}</div></div></section>
 
-  <section className="section where-we-serve"><div className="container"><SectionTitle eyebrow="Service areas" title="Where We Serve" text="Choose your nearest Pawrexio service area."/><div className="service-area-links">{locations.map(l=><Link to={`/locations/${l.slug}`} key={l.id}>{l.heading||`Pet Training In ${l.city}`}<ArrowRight/></Link>)}</div><a className="text-link" href={`tel:${siteSettings.phone}`}><Phone/>Call Pawrexio</a></div></section>
+  <section className="section where-we-serve"><div className="container"><SectionTitle eyebrow="Service areas" title="Where We Serve" text="Choose your nearest Pawrexio service area."/><div className="service-area-links">{locations.map(l=><Link to={`/locations/${l.slug}`} key={l.id}>{l.heading||`Pet Training In ${l.city}`}<ArrowRight/></Link>)}</div><a className="button where-we-serve-call" href={`tel:${siteSettings.phone}`}><Phone/>Call Pawrexio</a></div></section>
  </>
 }

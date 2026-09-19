@@ -2,8 +2,10 @@ import { pageMetadata } from '../lib/public-content'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { faqs, locations, posts, programs, services, siteSettings } from '../data'
+import { GA_MEASUREMENT_ID, SITE_URL } from '../config'
 
-const base = 'https://www.pawrexio.com'
+const base = SITE_URL
+let lastTrackedPath = ''
 const pages: Record<string, [string, string]> = {
   '/': ['Pawrexio | Professional Pet Training & Pet Care', 'Positive dog training, puppy training, cat training, grooming and dog walking for happier pets and stronger family bonds.'],
   '/about': ['About Pawrexio | Positive Pet Training & Care', 'Learn about Pawrexio’s personalised approach to pet training, behaviour guidance and everyday care.'],
@@ -47,10 +49,12 @@ export function Seo(){
     upsertMeta('meta[name="robots"]','name','robots',pathname.startsWith('/admin')||custom?.robots_index===false?'noindex,nofollow':'index,follow')
     let canonical=document.head.querySelector('link[rel="canonical"]') as HTMLLinkElement|null
     if(!canonical){canonical=document.createElement('link');canonical.rel='canonical';document.head.appendChild(canonical)}
-    canonical.href=custom?.canonical_url||`${base}${pathname}`
+    canonical.href=String(custom?.canonical_url||`${base}${pathname}`).replace(/^https:\/\/(?:www\.)?pawrexio\.com/i,base)
+    upsertMeta('meta[property="og:url"]','property','og:url',canonical.href)
     let script=document.querySelector('#pawrexio-schema') as HTMLScriptElement|null
     if(!script){script=document.createElement('script');script.id='pawrexio-schema';script.type='application/ld+json';document.head.appendChild(script)}
     script.text=JSON.stringify([schema,...(pathname==='/'?[]:[{'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:base},{'@type':'ListItem',position:2,name:meta[0].split('|')[0].trim(),item:canonical.href}]}])])
+    if(lastTrackedPath!==pathname){window.gtag?.('config',GA_MEASUREMENT_ID,{page_path:pathname,page_title:meta[0]});lastTrackedPath=pathname}
   },[pathname])
   return null
 }

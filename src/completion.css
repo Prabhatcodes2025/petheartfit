@@ -262,6 +262,13 @@ html body div#chat-bot-message-container{display:none!important}
 @media(max-width:900px){.contact-trust .trust-inner{grid-template-columns:1fr}.contact-trust .trust-inner article{min-height:112px}}
 @media(max-width:500px){.contact-trust{padding:22px 0}.contact-trust .trust-inner article{min-height:0;padding:20px}.article-featured-image{aspect-ratio:4/3;margin-bottom:38px;border-radius:11px}.reference-about-strengths .faq-item button,.reference-about-faq .faq-item button{padding-inline:14px}.reference-about-strengths .faq-answer p,.reference-about-faq .faq-answer p{padding-right:14px}.rich-content .location-training-heading{font-size:1.35rem}}
 
+/* Targeted About heading and Where We Serve CTA refinements. */
+.reference-about-copy h1{font-size:clamp(1.8rem,2.7vw,2.75rem);line-height:1.16;text-wrap:balance}
+.where-we-serve-call{margin-top:30px;min-width:190px;background:linear-gradient(120deg,#e87834,#d96229);color:#fff;border:2px solid #062744;border-radius:10px;box-shadow:0 12px 28px rgba(6,39,68,.16)}
+.where-we-serve-call:hover{background:#062744;transform:translateY(-3px);box-shadow:0 16px 34px rgba(6,39,68,.24)}
+.where-we-serve-call svg{width:18px}
+@media(max-width:430px){.reference-about-copy h1{font-size:1.75rem;line-height:1.2}.where-we-serve-call{width:100%}}
+
 /* Targeted hero and floating-contact positioning. */
 .legacy-hero .hero-controls{top:0;right:0;bottom:0;height:100%}
 .legacy-hero .hero-arrows{height:100%}

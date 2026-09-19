@@ -12,4 +12,4 @@ for(const key of ['services','programs','locations','blog','gallery','testimonia
 }
 writeFileSync('supabase/content-seed.sql',sql)
 const paths=['','about','services','packages','locations','gallery','blog','testimonials','contact','faq',...(['services','programs','locations','blog'] as const).flatMap(key=>fallbackRecords(key).map(r=>`${key==='programs'?'packages':key}/${r.slug}`))]
-writeFileSync('public/sitemap.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+paths.map(p=>`<url><loc>https://www.pawrexio.com/${p}</loc></url>`).join('\n')+'\n</urlset>\n')
+writeFileSync('public/sitemap.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+paths.map(p=>`<url><loc>https://www.pawrexio.in/${p}</loc></url>`).join('\n')+'\n</urlset>\n')

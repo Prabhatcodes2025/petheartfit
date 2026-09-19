@@ -1,4 +1,14 @@
 {
+  "redirects": [
+    { "source": "/blogs", "destination": "/blog", "permanent": true },
+    { "source": "/blogs/puppy-training-in-gurgaon-build-a-happy-well-behaved-companion", "destination": "/blog/puppy-training-happy-well-behaved-companion", "permanent": true },
+    { "source": "/blogs/basic-to-advance-dog-training-service", "destination": "/blog/basic-to-advanced-dog-training", "permanent": true },
+    { "source": "/blogs/dog-training-in-mumbai-professional-trusted-pet-training-services", "destination": "/blog/dog-training-in-mumbai-professional-trusted-services", "permanent": true },
+    { "source": "/blogs/pet-training-for-happy-obedient--well-behaved-pets", "destination": "/blog/pet-training-happy-obedient-well-behaved-pets", "permanent": true },
+    { "source": "/blogs/leash-training-for-dogs", "destination": "/blog/leash-training-practical-guide", "permanent": true },
+    { "source": "/blogs/puppy-obedience-classes", "destination": "/blog/puppy-obedience-classes-perfect-foundation", "permanent": true },
+    { "source": "/blogs/dog-behavior-training", "destination": "/blog/dog-behaviour-training-lasting-results", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api" },
     { "source": "/((?!api/).*)", "destination": "/index.html" }

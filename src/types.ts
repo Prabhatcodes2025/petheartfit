@@ -2,15 +2,15 @@ export type Service = {
   id: string; slug: string; title: string; kicker: string; description: string;
   icon: string; duration: string; suitable: string; benefits: string[]; image: string;
   category: 'Dog Training'|'Cat Training'|'Grooming'|'Dog Walking'; includes?: string[]; content?: string[];
-  price?: string; blocks?: ContentBlock[];
+  price?: string; blocks?: ContentBlock[]; richContent?: string;
 }
 
 export type ContentBlock={kind:string;text:string}
 export type Program = {
   id: string; slug: string; title: string; level: string; duration: string;
-  summary: string; includes: string[]; image: string; category: string; sessions?: string; price?: string; regularPrice?:string; priceNote?:string; discount?:string; rating?:string; savings?:string; benefits?:string[]; content?:string[]; blocks?:ContentBlock[]; reference?:string;
+  summary: string; includes: string[]; image: string; category: string; sessions?: string; price?: string; regularPrice?:string; priceNote?:string; discount?:string; rating?:string; savings?:string; benefits?:string[]; content?:string[]; blocks?:ContentBlock[]; richContent?:string; reference?:string;
 }
 
-export type Location = { id: string; slug: string; city: string; state: string; intro: string; heading?: string; content?: string[]; image?:string; blocks?:ContentBlock[] }
+export type Location = { id: string; slug: string; city: string; state: string; intro: string; heading?: string; content?: string[]; image?:string; blocks?:ContentBlock[]; richContent?:string }
 export type BlogPost = { id: string; slug: string; title: string; excerpt: string; category: string; date: string; readTime: string; image: string; content: string[]|string }
 export type Testimonial = { id:string; name:string; location:string; pet?:string; quote:string }

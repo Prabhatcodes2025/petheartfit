@@ -32,7 +32,11 @@ function productionProgram(program:Program):Program{
  if(program.slug==='haircut-styling')next={...next,price:'₹2,199',regularPrice:'',discount:'',savings:''}
  return next
 }
-export const programs:Program[]=(catalog as Program[]).map(productionProgram)
+export const DOG_TRAINING_PACKAGE_SLUGS=['puppy-training','basic-training-for-dog','intermediate-dog-training','smart-training-for-dog','advanced-training-for-dog','master-training-for-dog','canine-behaviour-training','canine-behavior-therapy-cbt'] as const
+const dogRank=(program:Program)=>program.category==='Dog Training'?DOG_TRAINING_PACKAGE_SLUGS.indexOf(program.slug as typeof DOG_TRAINING_PACKAGE_SLUGS[number]):-1
+export function sortProgramsInPlace(items:Program[]){return items.sort((a,b)=>{const ar=dogRank(a),br=dogRank(b);if(ar<0&&br<0)return 0;if(ar<0)return 1;if(br<0)return -1;return ar-br})}
+export function dogTrainingPackages(items:Program[]){return DOG_TRAINING_PACKAGE_SLUGS.flatMap(slug=>items.filter(program=>program.slug===slug))}
+export const programs:Program[]=sortProgramsInPlace((catalog as Program[]).map(productionProgram))
 export const locations:Location[]=cityContent
 
 export const posts:BlogPost[]=[
