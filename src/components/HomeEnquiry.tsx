@@ -1,11 +1,12 @@
 import { FormEvent, useState } from 'react'
 import { ArrowRight } from 'lucide-react'
+import { imageAlt } from '../data'
 
 const empty={fullName:'',email:'',breed:'',phone:'',city:'',message:'',website:''}
 
 export function EnquiryVisual({contact=false}:{contact?:boolean}){
  return <div className="home-enquiry-visual">
-  <img src="/assets/real/attention.webp" alt="Pawrexio trainer working attentively with a dog" loading="lazy" width="720" height="960"/>
+  <img src="/assets/real/attention.webp" alt={imageAlt('/assets/real/attention.webp','Pawrexio trainer working attentively with a dog')} loading="lazy" width="720" height="960"/>
   <div className="enquiry-image-copy">
    <span>{contact?'Personal support':'Professional pet care'}</span>
    <h3>{contact?"Let's Talk About Your Pet":'Expert Guidance Starts Here'}</h3>

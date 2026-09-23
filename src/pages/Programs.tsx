@@ -4,13 +4,13 @@ import { packageAliases } from '../package-aliases'
 import { LeadButton } from '../components/LeadPopup'
 import { PageHero, whatsapp } from '../components/Layout'
 import { Breadcrumb, Content } from '../components/Content'
-import { programs, siteSettings } from '../data'
+import { imageAlt, programs, siteSettings } from '../data'
 import type { Program } from '../types'
 import { FAQList } from '../components/FAQ'
 
 export function PackageCards({items,baseRoute='/packages'}:{items:Program[];baseRoute?:string}) {
  return <div className="package-grid">{items.map(p=><article className="package-card" key={p.id}>
-  <img src={p.image} alt={p.category==='Cat Training'?'Cat in a Pawrexio care setting':'Pawrexio pet training'} width="600" height="500" loading="lazy"/>
+  <img src={p.image} alt={p.imageAlt||imageAlt(p.image,p.category==='Cat Training'?'Cat in a Pawrexio care setting':'Pawrexio pet training')} width="600" height="500" loading="lazy"/>
   <div><p className="eyebrow">{p.category}</p><h3>{p.title}</h3><b className="package-duration">{p.sessions||p.duration}</b>{p.price&&<p className="package-price">{p.regularPrice&&<del>{p.regularPrice}</del>} <strong>{p.price}</strong></p>}<p>{p.summary}</p>
    <div className="card-actions"><Link className="button" to={`${baseRoute}/${p.slug}`}>Check Price <ArrowRight/></Link><a className="button button-outline" href={whatsapp(p.title)} target="_blank" rel="noreferrer"><MessageCircle/>WhatsApp</a></div>
   </div>
@@ -55,7 +55,7 @@ export function ProgramDetail(){
     <div className="detail-aside"><p className="eyebrow">Have Any Questions?</p><a href={`tel:${siteSettings.phone}`}><Phone/>{siteSettings.phone}</a><a href={`mailto:${siteSettings.email}`}>{siteSettings.email}</a><LeadButton service={p.title} package={p.slug}>Book Your Service</LeadButton><a className="button whatsapp-action" href={whatsapp(p.title)} target="_blank" rel="noreferrer"><MessageCircle/>WhatsApp</a></div>
    </aside>
    <article className="legacy-package-main">
-    <img className="legacy-package-image" src={p.image} alt={`Pawrexio ${p.title}`}/><h2>{p.title}</h2><p className="legacy-duration">{p.sessions||p.duration}</p>
+    <img className="legacy-package-image" src={p.image} alt={p.imageAlt||imageAlt(p.image,`Pawrexio ${p.title}`)}/><h2>{p.title}</h2><p className="legacy-duration">{p.sessions||p.duration}</p>
     <div className="legacy-price-row"><strong>{p.price||'Confirm on enquiry'}</strong>{p.regularPrice&&<del>{p.regularPrice}</del>}{p.discount&&<span>{p.discount}</span>}</div>
     {(p.rating||p.savings)&&<div className="legacy-rating-row">{p.rating&&<b>{p.rating} Rating</b>}{p.savings&&<b>You Saved {p.savings}</b>}</div>}
     {p.priceNote&&<p className="muted">{p.priceNote}</p>}<Content blocks={blocks}/>

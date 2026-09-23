@@ -287,3 +287,4 @@ html body div#chat-bot-message-container{display:none!important}
 }
 @media(max-width:1023px){.desktop-contact-float{display:none!important}}
 @media(prefers-reduced-motion:reduce){.desktop-contact-float,.desktop-contact-float a{transition:none}}
+.cms-image-alt{display:flex;flex-direction:column;gap:7px;margin-top:5px}.cms-image-alt b{font-size:.85rem}.cms-image-alt small{line-height:1.4}

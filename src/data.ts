@@ -3,7 +3,18 @@ import cityContent from './location-content.json'
 import type { BlogPost, Location, Program, Service, Testimonial } from './types'
 
 export const socialLinks={facebook:'https://www.facebook.com/people/Pet-heart-fit/61578055757743/',instagram:'https://www.instagram.com/petheartfit?igsh=MTBhbmsxNnV4ZnBnZA==',youtube:'https://www.youtube.com/@petheartfitt'}
-export const siteSettings={strapline:'Smarter Pets. Happier You.',phone:'9211630927',alternatePhone:'',email:'Pets.heart2025@gmail.com',whatsapp:'9211630927',address:'Shop No. 6, TBS Road, near Krishna Chowk, Ashok Vihar Phase III Extension, Gurugram, Haryana 122001',socials:{...socialLinks,linkedin:''},footer:'Positive, personalised pet training and care that strengthens the bond between pets and their families.'}
+export const siteSettings={strapline:'Smarter Pets. Happier You.',phone:'9211630927',alternatePhone:'',email:'Pets.heart2025@gmail.com',whatsapp:'9211630927',address:'Shop No. 6, TBS Road, near Krishna Chowk, Ashok Vihar Phase III Extension, Gurugram, Haryana 122001',socials:{...socialLinks,linkedin:''},footer:'Positive, personalised pet training and care that strengthens the bond between pets and their families.',imageAlts:{
+ '/assets/logo.png':'Pawrexio — Love, Care, Companionship',
+ '/assets/hero-reference/hero-dog-run.jpg':'Dog running outdoors during a Pawrexio training session',
+ '/assets/hero-reference/hero-dog-training.jpg':'Dog practising focused obedience training with Pawrexio',
+ '/assets/hero-reference/hero-dog-portrait.jpg':'Confident dog after positive Pawrexio training',
+ '/assets/real/companions.webp':'Dogs relaxing together after a positive training session',
+ '/assets/real/obedience.webp':'Pawrexio trainer practising obedience skills with a dog',
+ '/assets/real/reward-training.webp':'Dog receiving a reward during positive reinforcement training',
+ '/assets/real/attention.webp':'Dog giving focused attention during a Pawrexio training session',
+ '/assets/real/puppy-focus.webp':'Puppy learning to focus during a positive training session'
+ } as Record<string,string>}
+export const imageAlt=(src:string|undefined,fallback='')=>src?(siteSettings.imageAlts[src]??fallback):fallback
 const dog='/assets/real/obedience.webp',puppy='/assets/real/puppy-focus.webp',cat='/assets/real/cat-session.webp'
 export const services:Service[]=[
  {id:'dog',slug:'dog-training',title:'Dog Training',kicker:'Professional training for everyday life',description:'Personalised dog training for puppies and adult dogs, from household manners and obedience to leash skills and complex behaviour support.',icon:'dog',duration:'Plan confirmed after consultation',suitable:'Puppies and adult dogs',benefits:['Clear everyday communication','Positive, practical routines','Pet-parent coaching'],includes:['Puppy and obedience foundations','Leash and recall skills','Behaviour-based programs'],content:['Effective dog training is about more than teaching commands. It helps your dog understand what is expected while giving you a reliable way to guide them at home and outdoors.','Every plan considers age, breed, learning history, home routine and the situations where behaviour becomes difficult. Skills are taught progressively and practised in the real environments where you need them.'],image:dog,category:'Dog Training'},

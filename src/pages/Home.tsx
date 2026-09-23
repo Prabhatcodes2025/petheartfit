@@ -8,7 +8,7 @@ import { SectionTitle, whatsapp } from '../components/Layout'
 import { LeadButton } from '../components/LeadPopup'
 import { TrainingVideo } from '../components/Media'
 import { Reveal } from '../components/Reveal'
-import { faqs, locations, services, siteSettings, testimonials } from '../data'
+import { faqs, imageAlt, locations, services, siteSettings, testimonials } from '../data'
 import { galleryMedia } from '../lib/public-content'
 
 const behaviours=[
@@ -73,7 +73,7 @@ export default function Home(){
 
   <section className="consult-band"><div className="container"><div><p className="eyebrow">We're here to help</p><h2>Not Sure What Training Your Pet Needs?</h2><p>Tell us about your pet, the behaviour you're struggling with, and your location. Our professional dog trainers can help you find the right training approach and dog training service for your pet.</p></div><div className="band-actions"><LeadButton>Get personalized guidance</LeadButton><Link className="button trainer-cta" to="/contact">Talk to a Pet Trainer <ArrowRight/></Link></div></div></section>
 
-  <section className="section services-home"><div className="container"><SectionTitle eyebrow="All Services" title="Our Services"/><div className="service-category-grid">{categories.map((s,i)=>{const title=s.slug==='grooming'?'Grooming':s.slug==='dog-walking'?'Walking':s.title;return <Reveal className="service-category" key={s.id}><span>{String(i+1).padStart(2,'0')}</span><img src={s.image} alt="" loading="lazy"/><div><h3>{title}</h3><small>{categoryCopy[s.slug]}</small><div className="card-actions"><Link className="service-know-more" to={`/services/${s.slug}`}>Know More <ArrowRight/></Link><a className="button service-whatsapp" href={whatsapp(title)} target="_blank" rel="noreferrer">Whatsapp</a></div></div></Reveal>})}</div></div></section>
+  <section className="section services-home"><div className="container"><SectionTitle eyebrow="All Services" title="Our Services"/><div className="service-category-grid">{categories.map((s,i)=>{const title=s.slug==='grooming'?'Grooming':s.slug==='dog-walking'?'Walking':s.title;return <Reveal className="service-category" key={s.id}><span>{String(i+1).padStart(2,'0')}</span><img src={s.image} alt={s.imageAlt||imageAlt(s.image,title)} loading="lazy"/><div><h3>{title}</h3><small>{categoryCopy[s.slug]}</small><div className="card-actions"><Link className="service-know-more" to={`/services/${s.slug}`}>Know More <ArrowRight/></Link><a className="button service-whatsapp" href={whatsapp(title)} target="_blank" rel="noreferrer">Whatsapp</a></div></div></Reveal>})}</div></div></section>
 
   <section className="section home-enquiry"><div className="container home-enquiry-grid"><EnquiryVisual/><HomeEnquiry/></div></section>
 
@@ -93,7 +93,7 @@ export default function Home(){
 
   <section className="section faq-home"><div className="container faq-grid"><SectionTitle eyebrow="Frequently Asked Questions" title="Frequently Asked Questions"/><FAQList items={faqs.slice(0,7)}/></div></section>
 
-  <section className="section gallery-preview"><div className="container"><h2>What we have done</h2><div className="home-old-gallery">{galleryMedia.filter(item=>item.type==='image').slice(0,13).map(item=><a href={item.url} target="_blank" rel="noreferrer" key={item.id}><img src={item.url} alt={item.title} loading="lazy"/></a>)}</div></div></section>
+  <section className="section gallery-preview"><div className="container"><h2>What we have done</h2><div className="home-old-gallery">{galleryMedia.filter(item=>item.type==='image').slice(0,13).map(item=><a href={item.url} target="_blank" rel="noreferrer" key={item.id}><img src={item.url} alt={item.alt||item.title||''} loading="lazy"/></a>)}</div></div></section>
 
   <section className="section where-we-serve"><div className="container"><SectionTitle eyebrow="Service areas" title="Where We Serve" text="Choose your nearest Pawrexio service area."/><div className="service-area-links">{locations.map(l=><Link to={`/locations/${l.slug}`} key={l.id}>{l.heading||`Pet Training In ${l.city}`}<ArrowRight/></Link>)}</div><a className="button where-we-serve-call" href={`tel:${siteSettings.phone}`}><Phone/>Call Pawrexio</a></div></section>
  </>
