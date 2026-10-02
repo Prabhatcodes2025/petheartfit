@@ -14,6 +14,7 @@ const pages: Record<string, [string, string]> = {
   '/locations': ['Pet Training Locations in India | Pawrexio', 'Find active Pawrexio training, behaviour, grooming and dog-walking service areas.'],
   '/gallery': ['Pet Training Gallery | Pawrexio', 'See Pawrexio pet training, puppy, cat and care sessions.'],
   '/testimonials': ['Pet Parent Feedback | Pawrexio', 'Read pet-parent feedback about Pawrexio training and care.'],
+  '/feedback': ['Pet Parent Feedback | Pawrexio', 'Read pet-parent feedback about Pawrexio training and care.'],
   '/blog': ['Pet Training Blog & Guides | Pawrexio', 'Practical guidance for puppy training, dog behaviour, leash walking, grooming and cat care.'],
   '/contact': ['Contact Pawrexio | Pet Training Enquiry', 'Tell Pawrexio about your pet, location and training or care needs.'],
   '/book': ['Book a Free Pet Training Consultation | Pawrexio', 'Request a free Pawrexio consultation for dog training, cat training, grooming or dog walking.'],
