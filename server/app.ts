@@ -55,7 +55,7 @@ async function requireAdmin(req:express.Request,res:express.Response,next:expres
 
 const validateContent=(req:express.Request,res:express.Response,next:express.NextFunction)=>{const table=req.path.split('/')[3];const key=Object.keys(definitions).find(k=>definitions[k].table===table);if(!key)return next();const parsed=schemaFor(key).safeParse(req.body);if(!parsed.success){const issue=parsed.error.issues[0],field=typeof issue.path[0]==='string'?issue.path[0]:undefined,label=definitions[key].fields.find(item=>item.key===field)?.label;return res.status(400).json({message:`${label||'A field'} is invalid: ${issue.message}`,field,code:'VALIDATION_ERROR',issues:parsed.error.flatten().fieldErrors})}req.body=parsed.data;next()}
 function normalizedContent(resource:string,body:Record<string,unknown>){const payload={...body};if(resource==='site_settings'){const social_links:Record<string,unknown>={};for(const key of ['facebook','instagram','youtube','linkedin']){social_links[key]=payload[key];delete payload[key]}payload.social_links=social_links}return payload}
-function databaseFailure(resource:string,operation:string,error:{code?:string;message?:string;details?:string;hint?:string},request:express.Request){
+export function databaseFailure(resource:string,operation:string,error:{code?:string;message?:string;details?:string;hint?:string},request:express.Request){
  const technical={resource,operation,recordId:request.params.id,userId:request.res?.locals.user?.id,fields:Object.keys(request.body||{}),code:error.code,message:error.message,details:error.details,hint:error.hint}
  console.error('[admin:save]',technical)
  const detail=[error.message,error.details,error.hint].filter(Boolean).join(' ')

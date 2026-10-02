@@ -12,6 +12,7 @@
     "dev:client": "vite",
     "dev:server": "tsx watch server/index.ts",
     "build": "tsc -b && tsc -p tsconfig.server.json && vite build",
+    "test:cms-reconciliation": "tsx scripts/test-cms-reconciliation.ts",
     "build:server": "tsc -p tsconfig.server.json",
     "start": "node dist-server/server/index.js",
     "preview": "vite preview",
