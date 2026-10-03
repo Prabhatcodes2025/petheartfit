@@ -6,7 +6,7 @@ import { LeadButton } from './LeadPopup'
 
 const nav=[['Home','/'],['About Us','/about'],['Blogs','/blog'],['Gallery','/gallery'],['Locations','/locations'],['Feedback','/testimonials'],['Contact Us','/contact']]
 
-export function whatsapp(context='pet training services'){const digits=(import.meta.env.VITE_WHATSAPP_NUMBER||siteSettings.whatsapp||'').replace(/\D/g,'');const n=digits.length===10?'91'+digits:digits;const msg=encodeURIComponent(`Hi Pawrexio, I would like to know more about ${context}.`);return `https://wa.me/${n}?text=${msg}`}
+export function whatsapp(context='pet training services'){const digits=(import.meta.env?.VITE_WHATSAPP_NUMBER||siteSettings.whatsapp||'').replace(/\D/g,'');const n=digits.length===10?'91'+digits:digits;const msg=encodeURIComponent(`Hi Pawrexio, I would like to know more about ${context}.`);return `https://wa.me/${n}?text=${msg}`}
 
 export function Layout(){
  const primary=services.filter(s=>['dog-training','cat-training','grooming','dog-walking'].includes(s.slug))
