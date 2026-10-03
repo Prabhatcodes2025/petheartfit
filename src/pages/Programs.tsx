@@ -3,15 +3,16 @@ import { Link, Navigate, useLocation, useParams } from 'react-router-dom'
 import { packageAliases } from '../package-aliases'
 import { LeadButton } from '../components/LeadPopup'
 import { PageHero, whatsapp } from '../components/Layout'
-import { Breadcrumb, Content } from '../components/Content'
+import { Breadcrumb } from '../components/Content'
 import { imageAlt, programs, siteSettings } from '../data'
 import type { Program } from '../types'
 import { FAQList } from '../components/FAQ'
+import { FullContent, OfferLists, OfferMetadata } from '../components/PublicOfferDetails'
 
 export function PackageCards({items,baseRoute='/packages'}:{items:Program[];baseRoute?:string}) {
  return <div className="package-grid">{items.map(p=><article className="package-card" key={p.id}>
   <img src={p.image} alt={p.imageAlt||imageAlt(p.image,p.category==='Cat Training'?'Cat in a Pawrexio care setting':'Pawrexio pet training')} width="600" height="500" loading="lazy"/>
-  <div><p className="eyebrow">{p.category}</p><h3>{p.title}</h3><b className="package-duration">{p.sessions||p.duration}</b>{p.price&&<p className="package-price">{p.regularPrice&&<del>{p.regularPrice}</del>} <strong>{p.price}</strong></p>}<p>{p.summary}</p>
+  <div><p className="eyebrow">{p.category}</p><h3>{p.title}</h3>{(p.sessions||p.duration)&&<b className="package-duration">{p.sessions&&p.duration&&p.sessions!==p.duration?`${p.duration} · ${p.sessions}`:p.sessions||p.duration}</b>}{p.price&&<p className="package-price">{p.regularPrice&&<del>{p.regularPrice}</del>} <strong>{p.price}</strong></p>}<p>{p.summary}</p>
    <div className="card-actions"><Link className="button" to={`${baseRoute}/${p.slug}`}>Check Price <ArrowRight/></Link><a className="button button-outline" href={whatsapp(p.title)} target="_blank" rel="noreferrer"><MessageCircle/>WhatsApp</a></div>
   </div>
  </article>)}</div>
@@ -45,7 +46,7 @@ export function ProgramDetail(){
  const p=programs.find(x=>x.slug===slug)
  if(!p)return <section className="section container"><h1>Package unavailable</h1><Link to="/packages">Explore packages</Link></section>
  const fromServices=pathname.startsWith('/services/')
- const blocks=p.blocks?.length?p.blocks:[...(p.content||[]).map(text=>({kind:'paragraph',text})),...p.includes.map(text=>({kind:'list',text}))]
+ const blocks=p.blocks?.length?p.blocks:(p.content||[]).map(text=>({kind:'paragraph',text}))
  return <>
   <section className="legacy-detail-title"><div className="container"><h1>{p.title}</h1></div></section>
   <Breadcrumb items={[{label:fromServices?'Services':'Packages',to:fromServices?'/services':'/packages'},{label:p.title}]}/>
@@ -55,10 +56,9 @@ export function ProgramDetail(){
     <div className="detail-aside"><p className="eyebrow">Have Any Questions?</p><a href={`tel:${siteSettings.phone}`}><Phone/>{siteSettings.phone}</a><a href={`mailto:${siteSettings.email}`}>{siteSettings.email}</a><LeadButton service={p.title} package={p.slug}>Book Your Service</LeadButton><a className="button whatsapp-action" href={whatsapp(p.title)} target="_blank" rel="noreferrer"><MessageCircle/>WhatsApp</a></div>
    </aside>
    <article className="legacy-package-main">
-    <img className="legacy-package-image" src={p.image} alt={p.imageAlt||imageAlt(p.image,`Pawrexio ${p.title}`)}/><h2>{p.title}</h2><p className="legacy-duration">{p.sessions||p.duration}</p>
-    <div className="legacy-price-row"><strong>{p.price||'Confirm on enquiry'}</strong>{p.regularPrice&&<del>{p.regularPrice}</del>}{p.discount&&<span>{p.discount}</span>}</div>
-    {(p.rating||p.savings)&&<div className="legacy-rating-row">{p.rating&&<b>{p.rating} Rating</b>}{p.savings&&<b>You Saved {p.savings}</b>}</div>}
-    {p.priceNote&&<p className="muted">{p.priceNote}</p>}<Content blocks={blocks}/>
+    <img className="legacy-package-image" src={p.image} alt={p.imageAlt||imageAlt(p.image,`Pawrexio ${p.title}`)}/><h2>{p.title}</h2>
+    <OfferMetadata duration={p.duration} sessions={p.sessions} originalPrice={p.regularPrice} currentPrice={p.price} discount={p.discount} rating={p.rating} savings={p.savings} showRating/>
+    {p.priceNote&&<p className="muted">{p.priceNote}</p>}<OfferLists includes={p.includes} benefits={p.benefits}/><FullContent blocks={blocks}/>
     <div className="legacy-detail-actions"><LeadButton service={p.title} package={p.slug}>Book a Session</LeadButton><a className="button button-outline" href={whatsapp(p.title)} target="_blank" rel="noreferrer"><MessageCircle/>WhatsApp</a></div>
    </article>
   </div></section>
