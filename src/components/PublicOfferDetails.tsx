@@ -3,13 +3,12 @@ import { Content } from './Content'
 import type { ContentBlock } from '../types'
 
 export function OfferMetadata({duration,sessions,originalPrice,currentPrice,discount,rating,savings,showRating=false}:{duration?:string;sessions?:string;originalPrice?:string;currentPrice?:string;discount?:string;rating?:string;savings?:string;showRating?:boolean}){
- const schedule=[duration,sessions&&sessions!==duration?sessions:''].filter(Boolean).join(' · ')
- const hasPrice=Boolean(originalPrice||currentPrice||discount)
+ const hasPrice=Boolean(originalPrice||currentPrice||discount||savings)
  const hasRating=showRating&&Boolean(rating)
  return <>
-  {schedule&&<p className="legacy-duration">{schedule}</p>}
+  {(duration||sessions)&&<p className="legacy-duration">{duration&&<span><b>Duration</b> {duration}</span>}{sessions&&<span>{duration?' · ':''}<b>Sessions</b> {sessions}</span>}</p>}
   {hasPrice&&<div className="legacy-price-row">{originalPrice&&<del>{originalPrice}</del>}{currentPrice&&<strong>{currentPrice}</strong>}{discount&&<span>{discount}</span>}</div>}
-  {(hasRating||savings)&&<div className="legacy-rating-row">{hasRating&&<b>{rating} Rating</b>}{savings&&<b>You Saved {savings}</b>}</div>}
+  {(hasRating||savings)&&<div className="legacy-rating-row">{hasRating&&<b>★ {rating}</b>}{savings&&<b>Save {savings}</b>}</div>}
  </>
 }
 
