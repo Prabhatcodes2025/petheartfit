@@ -44,8 +44,8 @@ export function Seo(){
     const custom=pageMetadata[pathname];if(custom)meta=[custom.meta_title||meta[0],custom.meta_description||meta[1]]
     document.title=meta[0]
     upsertMeta('meta[name="description"]','name','description',meta[1])
-    upsertMeta('meta[property="og:title"]','property','og:title',meta[0])
-    upsertMeta('meta[property="og:description"]','property','og:description',meta[1])
+    upsertMeta('meta[property="og:title"]','property','og:title',custom?.og_title||meta[0])
+    upsertMeta('meta[property="og:description"]','property','og:description',custom?.og_description||meta[1])
     upsertMeta('meta[property="og:image"]','property','og:image',custom?.og_image_url||`${base}/assets/real/companions.webp`)
     upsertMeta('meta[name="robots"]','name','robots',pathname.startsWith('/admin')||custom?.robots_index===false?'noindex,nofollow':'index,follow')
     let canonical=document.head.querySelector('link[rel="canonical"]') as HTMLLinkElement|null
