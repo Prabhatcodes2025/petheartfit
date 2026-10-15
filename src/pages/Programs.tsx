@@ -62,8 +62,8 @@ export function ProgramDetail(){
     <div className="legacy-detail-actions"><LeadButton service={p.title} package={p.slug}>Book a Session</LeadButton><a className="button button-outline" href={whatsapp(p.title)} target="_blank" rel="noreferrer"><MessageCircle/>WhatsApp</a></div>
    </article>
   </div></section>
-  {p.category==='Cat Training'&&<CatTrainingShared/>}
-  {p.category==='Dog Walking'&&<WalkingServiceDetails/>}
+  {p.category==='Cat Training'&&!p.cmsManaged&&<CatTrainingShared/>}
+  {p.category==='Dog Walking'&&!p.cmsManaged&&<WalkingServiceDetails/>}
   <section className="section package-assurance"><div className="container"><p className="eyebrow">Fast, Certified &amp; Trusted Worldwide</p><h2>Professional Pet Training &amp; Care Services</h2><p>Pawrexio is your trusted partner for Professional Dog Training, Puppy Training, Cat Training, Dog Walking, Pet Grooming and Dog Grooming at Home. We help pet parents raise happy, healthy and well-behaved companions with certified trainers and positive training methods.</p><div className="trust-card-grid">{[['Affordable Pricing','Transparent and budget-friendly pricing with no hidden charges.'],['Guaranteed Results','Proven training methods with customer satisfaction guaranteed.'],['Certified Trainers','Experienced pet experts providing personalized care and training.'],['24/7 Support','Dedicated online support whenever you need guidance.']].map(([title,text])=><article className="trust-card" key={title}><Check/><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
   <section className="section legacy-owner-guide"><div className="container"><p className="eyebrow">First-Time Pet Owner Guide</p><h2>Give Your Pet the Best Start</h2><p>The first few weeks are the most important for building a lifelong bond. Follow these simple tips to keep your furry companion happy and healthy.</p><div className="owner-tip-grid">{ownerGuide.map(([title,text],i)=><article className="owner-tip-card" key={title}><span>{String(i+1).padStart(2,'0')}</span><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
  </>

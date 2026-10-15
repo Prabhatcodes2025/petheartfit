@@ -10,6 +10,8 @@ import { ProgramDetail } from '../src/pages/Programs'
 import { programs, services } from '../src/data'
 import { definitions } from '../shared/cms'
 import { calculatedPriceFields, draftOf, valuesOf } from '../src/lib/cms-form'
+import { FAQList } from '../src/components/FAQ'
+import { isAdminSeoVisible } from '../src/lib/admin-seo'
 
 const richHtml='<h2>Training plan</h2><p>Calm <strong>reward-based</strong> practice with <em>patient</em> coaching.</p><ol><li>Start at home</li></ol><blockquote>A short quote</blockquote><p><a href="https://example.com">Read more</a></p><figure><img src="/assets/dog.webp" alt="Dog learning a cue"/><figcaption>Practice</figcaption></figure>'
 const common={id:'row-1',slug:'cms-example',title:'CMS Example',category:'Dog Training',duration:'8 weeks',session_count:'16 sessions',price_from:18000,sale_price:15000,discount_label:'SAVE 17%',rating:4.8,savings:3000,inclusions:['First inclusion','Second inclusion'],benefits:['Confidence','Everyday manners'],content:richHtml,image_url:'/assets/dog.webp',alt_text:'Dog in training'}
@@ -35,6 +37,14 @@ assert.equal(emptyPrices.discount,'')
 assert.equal(emptyPrices.rating,'')
 assert.equal(emptyPrices.savings,'')
 
+const faqMarkup=renderToStaticMarkup(<FAQList items={[["Question","Answer"]]}/>)
+assert.ok(faqMarkup.includes('aria-expanded="false"'))
+assert.ok(faqMarkup.includes('aria-hidden="true"'))
+assert.ok(!faqMarkup.includes('faq-item open'))
+assert.equal(isAdminSeoVisible({page_key:'/services'}),true)
+assert.equal(isAdminSeoVisible({page_key:'/packages/premium-dog-walking-package'}),false)
+assert.equal(isAdminSeoVisible({page_key:'/packages/kitten-training'}),false)
+
 // Render the actual existing public routes using DB-shaped CMS fixtures. These
 // rows are mapped exactly like public-content.ts and never written to Supabase.
 const fixtureFields={duration:'4 Months',session_count:'48 Sessions',price_from:50000,sale_price:46000,discount_label:'8% OFF',rating:4.8,savings:4000,inclusions:['TEST INCLUSION 1','TEST INCLUSION 2','TEST INCLUSION 3'],benefits:['TEST BENEFIT'],content:'<h2>TEST FULL CONTENT</h2><p>Formatted public content.</p><figure><img src="/assets/test.webp" alt="Test image ALT"/></figure>'}
@@ -51,6 +61,20 @@ for(const value of ['Dog Training CMS Fixture','Duration</b> 4 Months','Sessions
 for(const value of ['Package CMS Fixture','Duration</b> 4 Months','Sessions</b> 48 Sessions','₹50,000','₹46,000','8% OFF','Save ₹4,000','★ 4.8','TEST INCLUSION 1','TEST INCLUSION 2','TEST INCLUSION 3','TEST BENEFIT','<h2>TEST FULL CONTENT</h2>','alt="Test image ALT"'])assert.ok(packagePage.includes(value),`existing Package route missing ${value}`)
 assert.ok(!servicePage.includes('&lt;p&gt;TEST FULL CONTENT'))
 assert.ok(!packagePage.includes('&lt;p&gt;TEST FULL CONTENT'))
+
+// A /services slug belongs to the Services collection even when a Package has
+// the same slug. This prevents static package facts from overriding CMS fields.
+const puppyService=mapServiceRow({...common,slug:'puppy-training',title:'Puppy Service Fixture',session_count:'TEST 24 SESSIONS',kicker:'Puppy',short_description:'Puppy summary',description:'Puppy description',suitable_for:'Puppies'})
+const puppyPackage=mapProgramRow({...common,slug:'puppy-training',title:'Conflicting Package Fixture',session_count:'OLD STATIC SESSIONS',summary:'Package summary'})
+const leashService=mapServiceRow({...common,slug:'leash-training-for-dogs',title:'Leash Service Fixture',session_count:'TEST 8 SESSIONS',kicker:'Leash',short_description:'Leash summary',description:'Leash description',suitable_for:'Dogs'})
+services.splice(0,services.length,puppyService,leashService)
+programs.splice(0,programs.length,puppyPackage)
+let puppyPage='',leashPage=''
+try{puppyPage=renderRoute('/services/puppy-training','/services/:slug',<ServiceDetail/>);leashPage=renderRoute('/services/leash-training-for-dogs','/services/:slug',<ServiceDetail/>)}finally{console.error=previousConsoleError}
+assert.ok(puppyPage.includes('Sessions</b> TEST 24 SESSIONS'))
+assert.ok(!puppyPage.includes('OLD STATIC SESSIONS'))
+assert.ok(!puppyPage.includes('Conflicting Package Fixture'))
+assert.ok(leashPage.includes('Sessions</b> TEST 8 SESSIONS'))
 
 // Simulate Admin edit → computed fields → DB payload → reopened editor.
 for(const type of ['services','programs']){

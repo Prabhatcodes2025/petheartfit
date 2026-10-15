@@ -2,13 +2,13 @@ export type Service = {
   id: string; slug: string; title: string; kicker: string; description: string;
   icon: string; duration: string; suitable: string; benefits: string[]; image: string; imageAlt?: string;
   category: 'Dog Training'|'Cat Training'|'Grooming'|'Dog Walking'; includes?: string[]; content?: string[];
-  price?: string; originalPrice?:string; sessions?:string; discount?:string; rating?:string; savings?:string; blocks?: ContentBlock[]; richContent?: string;
+  price?: string; originalPrice?:string; sessions?:string; discount?:string; rating?:string; savings?:string; blocks?: ContentBlock[]; richContent?: string; cmsManaged?: boolean;
 }
 
 export type ContentBlock={kind:string;text:string}
 export type Program = {
   id: string; slug: string; title: string; level: string; duration: string;
-  summary: string; includes: string[]; image: string; imageAlt?: string; category: string; sessions?: string; price?: string; regularPrice?:string; priceNote?:string; discount?:string; rating?:string; savings?:string; benefits?:string[]; content?:string[]; blocks?:ContentBlock[]; richContent?:string; reference?:string;
+  summary: string; includes: string[]; image: string; imageAlt?: string; category: string; sessions?: string; price?: string; regularPrice?:string; priceNote?:string; discount?:string; rating?:string; savings?:string; benefits?:string[]; content?:string[]; blocks?:ContentBlock[]; richContent?:string; reference?:string; cmsManaged?: boolean;
 }
 
 export type Location = { id: string; slug: string; city: string; state: string; intro: string; heading?: string; content?: string[]; image?:string; imageAlt?:string; blocks?:ContentBlock[]; richContent?:string }

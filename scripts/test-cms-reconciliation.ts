@@ -17,7 +17,7 @@ function serializeService(overrides:Record<string,unknown>={}){
 // A: basic content; B: all offer fields; C: image and ALT URL ordering; D: blank optionals.
 assert.equal(serializeService().title,'Basic service')
 const offer=serializeService({duration:'45 minutes',session_count:'6',price_from:'12000',sale_price:'9500',discount_label:'NO',rating:'4.7',savings:'2500',inclusions:'Consultation\nFollow-up'})
-assert.deepEqual([offer.duration,offer.session_count,offer.price_from,offer.sale_price,offer.discount_label,offer.rating,offer.savings,offer.inclusions],['45 minutes','6',12000,9500,'NO',4.7,2500,['Consultation','Follow-up']])
+assert.deepEqual([offer.duration,offer.session_count,offer.price_from,offer.sale_price,offer.discount_label,offer.rating,offer.savings,offer.inclusions],['45 minutes','6',12000,9500,'21% OFF',4.7,2500,['Consultation','Follow-up']])
 const imagePayload=serializeService({image_url:'/assets/main.webp',alt_text:'Dog training outdoors',additional_images:'/assets/one.webp\n/assets/two.webp',additional_image_alts:'A dog learning a sit\nA trainer rewarding a dog'})
 assert.equal(imagePayload.alt_text,'Dog training outdoors')
 assert.deepEqual(imagePayload.additional_images,['/assets/one.webp','/assets/two.webp'])
