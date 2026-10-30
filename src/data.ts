@@ -1,9 +1,10 @@
 import catalog from './catalog.json'
 import cityContent from './location-content.json'
 import type { BlogPost, Location, Program, Service, Testimonial } from './types'
+import type { NavigationItem } from './lib/navigation'
 
 export const socialLinks={facebook:'https://www.facebook.com/people/Pet-heart-fit/61578055757743/',instagram:'https://www.instagram.com/petheartfit?igsh=MTBhbmsxNnV4ZnBnZA==',youtube:'https://www.youtube.com/@petheartfitt'}
-export const siteSettings={strapline:'Smarter Pets. Happier You.',phone:'9211630927',alternatePhone:'',email:'Pets.heart2025@gmail.com',whatsapp:'9211630927',address:'Shop No. 6, TBS Road, near Krishna Chowk, Ashok Vihar Phase III Extension, Gurugram, Haryana 122001',socials:{...socialLinks,linkedin:''},footer:'Positive, personalised pet training and care that strengthens the bond between pets and their families.',imageAlts:{
+export const siteSettings={strapline:'Smarter Pets. Happier You.',phone:'9211630927',alternatePhone:'',email:'Pets.heart2025@gmail.com',whatsapp:'9211630927',address:'Shop No. 6, TBS Road, near Krishna Chowk, Ashok Vihar Phase III Extension, Gurugram, Haryana 122001',socials:{...socialLinks,linkedin:''},footer:'Positive, personalised pet training and care that strengthens the bond between pets and their families.',navigation:null as NavigationItem[]|null,imageAlts:{
  '/assets/logo.png':'Pawrexio — Love, Care, Companionship',
  '/assets/hero-reference/hero-dog-run.jpg':'Dog running outdoors during a Pawrexio training session',
  '/assets/hero-reference/hero-dog-training.jpg':'Dog practising focused obedience training with Pawrexio',

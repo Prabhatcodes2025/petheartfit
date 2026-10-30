@@ -3,6 +3,7 @@ import { services, programs, locations, posts, testimonials, siteSettings, socia
 import photos from '../media.json'
 import videos from '../videos.json'
 import { contentBlocks, mapProgramRow, mapServiceRow } from './public-cms-mapping'
+import { normalizeNavigation } from './navigation'
 type DbRow=Record<string,any>
 export const pageMetadata:Record<string,DbRow>={}
 export const galleryMedia:DbRow[]=[...photos.map((p,i)=>({id:'photo-'+i,title:p.title,url:p.file,poster:p.file,type:'image',category:'Training',alt:p.title,width:p.width,height:p.height})),...videos]
@@ -16,7 +17,7 @@ export async function loadPublicContent(){if(!supabase)return;const keys=['servi
  if(key==='blog_posts')posts.splice(0,posts.length,...rows.map(r=>({id:r.id,slug:r.slug,title:r.title,excerpt:r.excerpt,category:r.category||'Pet Care',date:r.published_at?.slice(0,10)||'',readTime:Math.max(1,Math.ceil(String(r.content||'').replace(/<[^>]+>/g,' ').split(/\s+/).length/200))+' min read',image:r.featured_image_url||'/assets/real/companions.webp',imageAlt:r.alt_text||'',content:String(r.content||'')})));
  if(key==='testimonials')testimonials.splice(0,testimonials.length,...rows.map(r=>({id:r.id,name:r.customer_name,pet:r.pet_name,location:r.location||'',quote:r.content,image:r.image_url||'',imageAlt:r.alt_text||''})));
  if(key==='gallery')galleryMedia.splice(0,galleryMedia.length,...rows.map(r=>({id:r.id,title:r.title,url:r.image_url,poster:r.poster_url||r.image_url,type:r.media_type||'image',category:r.category||'Training',alt:r.alt_text||'',width:600,height:800})));
- if(key==='site_settings'&&rows[0]){const r=rows[0];Object.assign(siteSettings,{strapline:r.tagline||siteSettings.strapline,phone:r.phone||siteSettings.phone,email:r.public_email||siteSettings.email,whatsapp:r.whatsapp_number||siteSettings.whatsapp,address:r.address||siteSettings.address,footer:r.footer_text||siteSettings.footer,imageAlts:{...siteSettings.imageAlts,...(r.image_alt_texts||{})},socials:{...(r.social_links||siteSettings.socials),...socialLinks}})}
+ if(key==='site_settings'&&rows[0]){const r=rows[0];Object.assign(siteSettings,{strapline:r.tagline||siteSettings.strapline,phone:r.phone||siteSettings.phone,email:r.public_email||siteSettings.email,whatsapp:r.whatsapp_number||siteSettings.whatsapp,address:r.address||siteSettings.address,footer:r.footer_text||siteSettings.footer,navigation:Array.isArray(r.header_navigation)?normalizeNavigation(r.header_navigation):siteSettings.navigation,imageAlts:{...siteSettings.imageAlts,...(r.image_alt_texts||{})},socials:{...(r.social_links||siteSettings.socials),...socialLinks}})}
  if(key==='seo_metadata')exactSeoRows=rows;
  if(['services','training_programs','locations','blog_posts'].includes(key)){const prefix={services:'/services/',training_programs:'/packages/',locations:'/locations/',blog_posts:'/blog/'}[key]!;for(const r of rows)pageMetadata[prefix+r.slug]={meta_title:r.seo_title,meta_description:r.seo_description,canonical_url:r.canonical_url,og_image_url:r.og_image_url,robots_index:r.robots_index}}
  }catch{ /* Keep approved bundled content if the connection is unavailable. */ }finally{clearTimeout(timer)}}));for(const r of exactSeoRows)pageMetadata[r.page_key]=r}

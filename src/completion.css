@@ -299,3 +299,4 @@ html body div#chat-bot-message-container{display:none!important}
 .faq-item.open .faq-answer{visibility:visible;grid-template-rows:1fr;transition:grid-template-rows .35s ease,visibility 0s}
 .faq-item.open .faq-answer p{padding-bottom:22px}
 @media(max-width:500px){.faq-home .faq-answer p{padding-bottom:0}.faq-home .faq-item.open .faq-answer p{padding-bottom:18px}}
+.mobile-drawer nav>div>div a{padding-left:27px;font-size:.92rem}.mobile-drawer nav>div>div{animation:accordionIn .2s ease both;transform-origin:top}

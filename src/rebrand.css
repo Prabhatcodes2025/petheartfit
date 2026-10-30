@@ -47,3 +47,4 @@ html body .final-cta .button-ghost:hover{
   background:#16483b !important;
   color:#fff !important;
 }
+.desktop-nav{min-width:0;flex:0 1 auto}.desktop-nav>a,.nav-dropdown>button{white-space:nowrap}

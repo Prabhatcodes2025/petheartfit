@@ -1,0 +1,11 @@
+import { ChevronDown } from 'lucide-react'
+import { NavLink } from 'react-router-dom'
+import type { NavigationItem } from '../lib/navigation'
+
+function NavigationLink({item,className}:{item:NavigationItem;className?:string}){return /^(?:https?:\/\/|mailto:|tel:)/i.test(item.url)?<a className={className} href={item.url} target={/^https?:\/\//i.test(item.url)?'_blank':undefined} rel={/^https?:\/\//i.test(item.url)?'noopener noreferrer':undefined}>{item.label}</a>:<NavLink className={className} to={item.url} end={item.url==='/'||undefined}>{item.label}</NavLink>}
+const activePath=(pathname:string,url:string)=>url==='/'?pathname==='/':url.startsWith('/')&&(pathname===url||pathname.startsWith(url+'/'))
+
+export function HeaderNavigation({items,mobile=false,openDropdown,onToggle,pathname}:{items:NavigationItem[];mobile?:boolean;openDropdown:string|null;onToggle:(id:string|null)=>void;pathname:string}){
+ const visible=items.filter(item=>item.visible),top=visible.filter(item=>!item.parentId),childrenFor=(id:string)=>visible.filter(item=>item.parentId===id)
+ return <nav className={mobile?undefined:'desktop-nav'} aria-label={mobile?'Mobile navigation':'Main navigation'}>{top.map(item=>{const children=childrenFor(item.id),expanded=openDropdown===item.id,active=children.some(child=>activePath(pathname,child.url));if(!children.length)return <NavigationLink key={item.id} item={item}/>;return mobile?<div key={item.id}><button className={`service-toggle ${active?'active':''}`} aria-expanded={expanded} aria-controls={`mobile-${item.id}`} onClick={()=>onToggle(expanded?null:item.id)}>{item.label} <ChevronDown/></button>{expanded&&<div className="mobile-submenu" id={`mobile-${item.id}`}>{children.map(child=><NavigationLink className="core-service-link" key={child.id} item={child}/>)}</div>}</div>:<div className="nav-dropdown" key={item.id}><button className={active?'active':undefined} onClick={()=>onToggle(expanded?null:item.id)} onKeyDown={event=>{if(event.key==='Escape')onToggle(null)}} aria-expanded={expanded} aria-controls={`desktop-${item.id}`}>{item.label} <ChevronDown/></button><div id={`desktop-${item.id}`} className={expanded?'open':''}>{children.map(child=><NavigationLink className="core-service-link" key={child.id} item={child}/>)}</div></div>})}</nav>
+}
