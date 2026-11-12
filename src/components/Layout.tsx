@@ -5,14 +5,35 @@ import { programs,services,siteSettings } from '../data'
 import { LeadButton } from './LeadPopup'
 import { normalizeNavigation } from '../lib/navigation'
 import { HeaderNavigation } from './HeaderNavigation'
+import { navigationReady } from '../lib/public-content'
 
 export function whatsapp(context='pet training services'){const digits=(import.meta.env?.VITE_WHATSAPP_NUMBER||siteSettings.whatsapp||'').replace(/\D/g,'');const n=digits.length===10?'91'+digits:digits;const msg=encodeURIComponent(`Hi Pawrexio, I would like to know more about ${context}.`);return `https://wa.me/${n}?text=${msg}`}
 
 export function Layout(){
  const primary=services.filter(s=>['dog-training','cat-training','grooming','dog-walking'].includes(s.slug))
  const fallbackNavigation=normalizeNavigation([{id:'home',label:'Home',url:'/',order:10,visible:true},{id:'about',label:'About Us',url:'/about',order:20,visible:true},{id:'services',label:'Our Services',url:'#',order:30,visible:true},...primary.map((s,index)=>({id:`service-${s.slug}`,label:s.slug==='grooming'?'Grooming':s.slug==='dog-walking'?'Walking':s.title,url:`/services/${s.slug}`,order:index,visible:true,parentId:'services'})),{id:'blogs',label:'Blogs',url:'/blog',order:40,visible:true},{id:'gallery',label:'Gallery',url:'/gallery',order:50,visible:true},{id:'locations',label:'Locations',url:'/locations',order:60,visible:true},{id:'feedback',label:'Feedback',url:'/testimonials',order:70,visible:true},{id:'contact',label:'Contact Us',url:'/contact',order:80,visible:true}])
- const navigation=siteSettings.navigation??fallbackNavigation
- const footerOrder=['proffesional-dog-walker','bath--brush','tick-treatment-with-bath-brush','haircut-styling','bath-haircut-styling','massage-bath-full-haircut-styling','basic-training-for-dog','smart-training-for-dog','advanced-training-for-dog','master-training-for-dog','kitten-training','basic-cat-training','smart-cat-training','advance-cat-training','canine-behaviour-training','premium-dog-walking-package','standard-dog-walking-package','canine-behavior-therapy-cbt','puppy-training','intermediate-dog-training','litter-training-for-cat','basic-training-for-cat','advance-training-for-cat','leash-training-for-dogs']
+const [navReady, setNavReady] = useState(navigationReady)
+
+useEffect(() => {
+  const handleReady = () => {
+    setNavReady(true)
+  }
+
+  window.addEventListener('pawrexio:navigation-ready', handleReady)
+
+  if (navigationReady) {
+    setNavReady(true)
+  }
+
+  return () => {
+    window.removeEventListener('pawrexio:navigation-ready', handleReady)
+  }
+}, [])
+
+const navigation = navReady
+  ? (siteSettings.navigation ?? fallbackNavigation)
+  : []
+const footerOrder=['proffesional-dog-walker','bath--brush','tick-treatment-with-bath-brush','haircut-styling','bath-haircut-styling','massage-bath-full-haircut-styling','basic-training-for-dog','smart-training-for-dog','advanced-training-for-dog','master-training-for-dog','kitten-training','basic-cat-training','smart-cat-training','advance-cat-training','canine-behaviour-training','premium-dog-walking-package','standard-dog-walking-package','canine-behavior-therapy-cbt','puppy-training','intermediate-dog-training','litter-training-for-cat','basic-training-for-cat','advance-training-for-cat','leash-training-for-dogs']
  const footerServices=footerOrder.map(slug=>programs.find(program=>program.slug===slug)).filter((program):program is NonNullable<typeof program>=>Boolean(program))
  const [open,setOpen]=useState(false),[navClosing,setNavClosing]=useState(false),[openDropdown,setOpenDropdown]=useState<string|null>(null),[scrolled,setScrolled]=useState(false),[footerVisible,setFooterVisible]=useState(false);const loc=useLocation();const drawer=useRef<HTMLDivElement>(null);const toggle=useRef<HTMLButtonElement>(null);const navTimer=useRef<ReturnType<typeof setTimeout>>()
  const closeNav=()=>{if(navClosing)return;setNavClosing(true);navTimer.current=setTimeout(()=>{setOpen(false);setNavClosing(false)},240)}

@@ -4,13 +4,18 @@ import photos from '../media.json'
 import videos from '../videos.json'
 import { contentBlocks, mapProgramRow, mapServiceRow } from './public-cms-mapping'
 import { normalizeNavigation } from './navigation'
+export let navigationReady = false
 type DbRow=Record<string,any>
 export const pageMetadata:Record<string,DbRow>={}
 export const galleryMedia:DbRow[]=[...photos.map((p,i)=>({id:'photo-'+i,title:p.title,url:p.file,poster:p.file,type:'image',category:'Training',alt:p.title,width:p.width,height:p.height})),...videos]
 const blocks=contentBlocks
 const paragraphs=(value:unknown)=>blocks(value).map(b=>b.text)
 const richContent=(value:unknown)=>typeof value==='string'?value:undefined
-export async function loadPublicContent(){if(!supabase)return;const keys=['services','training_programs','locations','blog_posts','gallery','testimonials','site_settings','seo_metadata'];let exactSeoRows:DbRow[]=[];await Promise.all(keys.map(async key=>{const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),5000);try{let query=supabase!.from(key).select('*');if(['services','training_programs','blog_posts'].includes(key))query=query.eq('status','published');if(['locations','gallery','testimonials'].includes(key))query=query.eq('active',true);if(key==='testimonials')query=query.eq('verified',true);if(key==='blog_posts')query=query.lte('published_at',new Date().toISOString());const {data,error}=await query.abortSignal(controller.signal);if(error||!data)return;const rows=(data as DbRow[]).sort((a,b)=>(a.sort_order||0)-(b.sort_order||0));
+export async function loadPublicContent(){
+  if (!supabase) {
+    navigationReady = true
+    return
+  }const keys=['services','training_programs','locations','blog_posts','gallery','testimonials','site_settings','seo_metadata'];let exactSeoRows:DbRow[]=[];await Promise.all(keys.map(async key=>{const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),5000);try{let query=supabase!.from(key).select('*');if(['services','training_programs','blog_posts'].includes(key))query=query.eq('status','published');if(['locations','gallery','testimonials'].includes(key))query=query.eq('active',true);if(key==='testimonials')query=query.eq('verified',true);if(key==='blog_posts')query=query.lte('published_at',new Date().toISOString());const {data,error}=await query.abortSignal(controller.signal);if(error||!data)return;const rows=(data as DbRow[]).sort((a,b)=>(a.sort_order||0)-(b.sort_order||0));
  if(key==='services')services.splice(0,services.length,...rows.map(mapServiceRow));
  if(key==='training_programs')programs.splice(0,programs.length,...sortProgramsInPlace(rows.map(mapProgramRow)));
  if(key==='locations')locations.splice(0,locations.length,...rows.map(r=>({id:r.id,slug:r.slug,city:r.city,state:r.state,heading:r.heading,intro:r.intro,content:paragraphs(r.content),blocks:blocks(r.content),richContent:richContent(r.content),image:r.image_url||'/assets/real/companions.webp',imageAlt:r.alt_text||''})));
@@ -20,4 +25,12 @@ export async function loadPublicContent(){if(!supabase)return;const keys=['servi
  if(key==='site_settings'&&rows[0]){const r=rows[0];Object.assign(siteSettings,{strapline:r.tagline||siteSettings.strapline,phone:r.phone||siteSettings.phone,email:r.public_email||siteSettings.email,whatsapp:r.whatsapp_number||siteSettings.whatsapp,address:r.address||siteSettings.address,footer:r.footer_text||siteSettings.footer,navigation:Array.isArray(r.header_navigation)?normalizeNavigation(r.header_navigation):siteSettings.navigation,imageAlts:{...siteSettings.imageAlts,...(r.image_alt_texts||{})},socials:{...(r.social_links||siteSettings.socials),...socialLinks}})}
  if(key==='seo_metadata')exactSeoRows=rows;
  if(['services','training_programs','locations','blog_posts'].includes(key)){const prefix={services:'/services/',training_programs:'/packages/',locations:'/locations/',blog_posts:'/blog/'}[key]!;for(const r of rows)pageMetadata[prefix+r.slug]={meta_title:r.seo_title,meta_description:r.seo_description,canonical_url:r.canonical_url,og_image_url:r.og_image_url,robots_index:r.robots_index}}
- }catch{ /* Keep approved bundled content if the connection is unavailable. */ }finally{clearTimeout(timer)}}));for(const r of exactSeoRows)pageMetadata[r.page_key]=r}
+ }catch{ /* Keep approved bundled content if the connection is unavailable. */ }finally{clearTimeout(timer)}  }));
+
+  for (const r of exactSeoRows) {
+    pageMetadata[r.page_key] = r
+  }
+
+  navigationReady = true
+  window.dispatchEvent(new Event('pawrexio:navigation-ready'))
+}
