@@ -269,6 +269,21 @@ html body div#chat-bot-message-container{display:none!important}
 .where-we-serve-call svg{width:18px}
 @media(max-width:430px){.reference-about-copy h1{font-size:1.75rem;line-height:1.2}.where-we-serve-call{width:100%}}
 
+/* Requested content lists and viewport-safe consultation popup. */
+.worldwide-grid h3,.pawrexio-story-grid h3{font-size:clamp(1.45rem,2vw,2rem);line-height:1.2;margin:24px 0 14px}
+.worldwide-benefits{grid-template-columns:repeat(2,minmax(0,1fr))}
+.story-services{display:grid;gap:9px;margin:12px 0 28px;padding-left:20px;color:#52645e;line-height:1.6}
+.reference-about-copy h2{font-size:clamp(1.8rem,2.7vw,2.75rem);line-height:1.16;text-wrap:balance}
+.reference-about-columns ul{padding-left:20px;color:#52645e;line-height:1.7}
+.lead-backdrop{box-sizing:border-box;padding:clamp(6px,1.5vh,14px)}
+.lead-dialog{width:min(860px,calc(100vw - 12px));max-height:calc(100dvh - 12px);overflow:hidden}
+.lead-content{overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable;padding:clamp(16px,3vh,28px) clamp(18px,2.5vw,34px)}
+.lead-close{position:absolute;right:10px;top:10px;min-width:40px;min-height:40px}
+
+@media(max-width:800px){.lead-dialog{overflow:hidden}.lead-content{max-height:calc(100dvh - 12px);padding:16px 20px}.lead-mobile-logo{height:38px;margin-bottom:2px}.lead-content h2{font-size:clamp(1.35rem,5vw,1.75rem);line-height:1.08;margin:3px 0 5px}.lead-content>p:not(.eyebrow){margin-bottom:7px}.lead-form>.field-row,.lead-form>label{margin-bottom:6px}.lead-form input,.lead-form select{min-height:40px}.lead-form textarea{min-height:46px}.lead-direct{margin-top:8px}}
+@media(max-width:500px){.worldwide-benefits{grid-template-columns:1fr}.lead-content{padding:12px 14px 14px}.lead-mobile-logo{width:82px;height:34px}.lead-content .eyebrow{font-size:.6rem}.lead-form label{gap:2px}.lead-form .field-row{gap:0}.lead-submit{min-height:44px}.lead-direct a{min-height:44px}.reference-about-copy h2{font-size:1.75rem;line-height:1.2}}
+@media(max-height:700px){.lead-content{padding-top:12px;padding-bottom:12px}.lead-mobile-logo{height:30px;margin:0}.lead-content h2{font-size:1.3rem}.lead-content>p:not(.eyebrow){font-size:.78rem;line-height:1.3}.lead-form>.field-row,.lead-form>label{margin-bottom:5px}.lead-form textarea{min-height:42px;max-height:50px}.lead-direct{margin-top:6px}}
+
 /* Targeted hero and floating-contact positioning. */
 .legacy-hero .hero-controls{top:0;right:0;bottom:0;height:100%}
 .legacy-hero .hero-arrows{height:100%}

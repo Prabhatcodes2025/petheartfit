@@ -27,18 +27,20 @@ export function About() {
       <div className="container">
         <div className="reference-about-title">
           <p className="eyebrow">We Are Pawrexio</p>
-          <h2>“Pawrexio: Your Trusted Partner in Raising Happy, Well-Trained Dogs for a Balanced and Joyful Life.”</h2>
+          <h2>Pawrexio – Professional Pet Training &amp; Care Services</h2>
         </div>
         <div className="reference-about-copy">
           <div>
-            <h1>Pet Training &amp; Puppy Training – The Heart Behind Pawrexio</h1>
-            <p>In India, pets are family, and that's the inspiration behind Pawrexio. We are passionate about providing professional Pet Training and Puppy Training that help build trust, confidence, and a lifelong bond between pets and their families. Our positive, reward-based approach ensures every dog and cat learns in a safe, stress-free, and enjoyable environment. Every pet has a unique personality, and our experienced trainers create personalised training plans with patience, compassion, and care.</p>
+            <h2>Pet Training &amp; Puppy Training</h2>
+            <p>Pets are an important part of our family. At Pawrexio, we help pet parents train their pets and develop good habits.</p>
+            <p>We provide professional Pet Training and Puppy Training using positive, reward-based methods. Our trainers understand that every pet is different, so training is planned according to the pet's age, behaviour and learning needs.</p>
+            <p>Our goal is to help pets become more confident, well-behaved and comfortable at home and outdoors.</p>
           </div>
           <img src="/assets/real/obedience.webp" alt={imageAlt('/assets/real/obedience.webp','Pawrexio trainer with a dog')} loading="lazy" />
         </div>
         <div className="reference-about-columns">
-          <article><h2>Leash Training for Dogs, Cat Training Services &amp; Dog Walking Services</h2><p>Whether you have a playful puppy, an energetic adult dog, or a curious cat, we offer training programs for every stage. Our services include Leash Training for Dogs, Cat Training Services, Puppy Training, Basic, Intermediate, Smart, Advanced, and our complete All-in-One Training Package. We also provide specialised Canine Behaviour Therapy (CBT) to help pets overcome aggression, anxiety, fear, excessive barking, and other behavioural challenges. For pets who benefit from a calm outdoor environment, we also offer farmhouse training sessions where they can learn, play, and socialise under expert supervision. We also provide reliable Dog Walking Services to help keep your pet active, healthy, and happy.</p></article>
-          <article><h2>Pet Grooming Services &amp; Dog Grooming at Home</h2><p>At Pawrexio, we believe grooming is just as important as training for your pet's health and happiness. Our professional Pet Grooming Services include bathing, coat care, nail trimming, ear cleaning, and hygiene care for both dogs and cats. For added convenience, we also offer Dog Grooming at Home, allowing your furry companion to enjoy a comfortable and stress-free grooming experience. What truly makes Pawrexio special is the love, attention, and dedication we give every pet. Because at the end of the day, a happy pet means a happy family.</p></article>
+          <article><h2>Dog Training, Leash Training, Cat Training &amp; Dog Walking</h2><p>Whether you have a young puppy, an adult dog or a cat, Pawrexio offers training services to meet different needs.</p><p>Our training services include:</p><ul><li>Puppy Training</li><li>Basic, Intermediate, Smart and Advanced Dog Training</li><li>All-in-One Training Packages</li><li>Leash Training for Dogs</li><li>Cat Training Services</li><li>Canine Behaviour Therapy (CBT)</li></ul><p>We also help with common behaviour problems such as aggression, fear, anxiety and excessive barking.</p><p>For pets who need outdoor learning and activity, we offer supervised farmhouse training sessions. Our Dog Walking Services also help keep dogs active and healthy through regular walks.</p></article>
+          <article><h2>Pet Grooming Services &amp; Dog Grooming at Home</h2><p>Good grooming helps keep pets clean, comfortable and healthy.</p><p>Pawrexio provides Pet Grooming Services for both dogs and cats. These include bathing, brushing, nail trimming, ear cleaning and general hygiene care.</p><p>We also offer Dog Grooming at Home, so your pet can enjoy grooming in a familiar and comfortable environment.</p><p>At Pawrexio, we care about every pet and aim to make training and daily pet care easier for pet parents. A happy pet makes a happy family.</p></article>
         </div>
       </div>
     </section>
