@@ -315,3 +315,27 @@ html body div#chat-bot-message-container{display:none!important}
 .faq-item.open .faq-answer p{padding-bottom:22px}
 @media(max-width:500px){.faq-home .faq-answer p{padding-bottom:0}.faq-home .faq-item.open .faq-answer p{padding-bottom:18px}}
 .mobile-drawer nav>div>div a{padding-left:27px;font-size:.92rem}.mobile-drawer nav>div>div{animation:accordionIn .2s ease both;transform-origin:top}
+/* Homepage — Worldwide Section Heading */
+.worldwide-section h2 {
+  font-size: clamp(30px, 3.5vw, 52px);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  text-align: left;
+  max-width: 720px;
+}
+
+.worldwide-section h2 span {
+  display: inline;
+}
+
+.worldwide-section h2 span + span::before {
+  content: " ";
+}
+
+@media (max-width: 768px) {
+  .worldwide-section h2 {
+    font-size: clamp(28px, 7vw, 38px);
+    line-height: 1.2;
+    max-width: 100%;
+  }
+}
